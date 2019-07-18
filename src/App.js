@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
-import Home from "./Component/Home";
-import Dashboard from "./Component/Dashboard";
+import Home from "./Pages/Home";
+import Dashboard from "./Pages/Dashboard";
 import Form from "./Component/Form";
-import ViewOne from "./Component/ViewOne";
-import ViewAll from "./Component/ViewAll";
+import ViewOne from "./Pages/ViewOne";
+import ViewAll from "./Pages/ViewAll";
 
 function App() {
   return (
