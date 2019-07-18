@@ -16,8 +16,9 @@ function App() {
         <Route path="/i-want-to-be-helped" component={ViewAll} />
         <Route path="/i-want-to-offer-help" component={ViewAll} />
         <Route path="/view/:cards_id" component={ViewOne} />
-        <Route path="/form" component={Form} />
-        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/create-an-offer" component={Form} />
+        <Route path="/create-a-request" component={Form} />
+        {/* <Route path="/dashboard" component={Dashboard} /> */}
       </Switch>
     </div>
   );
