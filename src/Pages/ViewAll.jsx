@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
-import ViewOne from "./ViewOne"
+
+import Card from "./Card";
 export default class ViewAll extends Component {
   state = {
     cards: []
@@ -43,7 +44,7 @@ export default class ViewAll extends Component {
 
     return (
       <div>
-        <ViewOne cont={this.state.cards}></ViewOne>
+        <Card cont={this.state.cards}></Card>
       </div>
     );
   }
