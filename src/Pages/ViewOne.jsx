@@ -1,32 +1,21 @@
-import React, { Component } from "react";
-// import Axios from "axios";
-import Header from "./../Component/Header";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default class Details extends Component {
-  state = {
-    offer: []
-  };
-  // componentDidMount = () => {
-  //   Axios.get(
-  //     `https://ih-beer-api.herokuapp.com//${this.props.history.match.params.id}`
-  //   )
-  //     .then(dbres => {
-  //       this.setState({ beers: dbres.data.slice(6, 30) });
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  // };
-  render() {
-    return (
+export default function ViewOne({ cont }) {
+  return (
+    <div>
       <div>
-        <Header />
-        <div className="one-view-page">
-          <img src="" alt="" />
-          <p />
-        </div>
-        <p>Details</p>
+        {cont.map((card, i) => (
+          <div key={i}>
+            <Link to={`/cards/${card._id}`} className="link">
+              <img src={card.image_url} alt="" />
+              <h4>{card.name}</h4>
+              <p>{card.tagline}</p>
+              <p>{card.contributed_by}</p>
+            </Link>
+          </div>
+        ))}
       </div>
-    );
-  }
+    </div>
+  )
 }
