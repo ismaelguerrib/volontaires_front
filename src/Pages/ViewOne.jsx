@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 // import Axios from "axios";
-import Header from "./../Component/Header"
+import Header from "./../Component/Header";
 
 export default class Details extends Component {
   state = {
-    offer: []
+    cards: []
   };
   // componentDidMount = () => {
   //   Axios.get(
