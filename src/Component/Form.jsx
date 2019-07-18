@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Form() {
   return (
-    <div>
-      <form id="create-one" >
+    <div >
+      <form id="form" >
         <label for="title"> Title : </label>
         <input type="string" name="title" value="Take me to a quick walk with my wheelchair" id="title" />
         <label for="description"> Description :</label>

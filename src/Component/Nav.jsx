@@ -9,7 +9,7 @@ function NavMain() {
       <nav className="nav">
         <div className="nav-side">
           <NavLink activeClassName="is-active" exact to="/home">
-            <h1 className="nav-logo">There.</h1>
+            <h1 className="nav-logo">Volunteers</h1>
           </NavLink>
           <NavLink
             activeClassName="is-active"
@@ -21,13 +21,7 @@ function NavMain() {
           <NavLink activeClassName="is-active" className="nav-item" to="/about">
             About
           </NavLink>
-          <NavLink
-            activeClassName="is-active"
-            className="nav-item"
-            to="/videos"
-          >
-            Videos
-          </NavLink>
+        
           <NavLink activeClassName="is-active" className="nav-item" to="/form">
             Sign Up
           </NavLink>
