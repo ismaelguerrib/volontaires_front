@@ -1,19 +1,13 @@
-import React, { Component } from 'react'
-import Axios from "axios"
+import React, { Component } from "react";
+import Axios from "axios";
 
 export default class ViewAll extends Component {
-
-
   state = {
     cards: []
-  }
-  if() {
-
-  }
+  };
+  if() {}
   componentDidMount = () => {
-    Axios.get(
-      "http://localhost:9999/api/offers"
-    )
+    Axios.get(`${process.env.REACT_APP_BACK_URL}/api/offers`)
       .then(dbres => {
         this.setState({ cards: dbres.data });
       })
@@ -24,9 +18,9 @@ export default class ViewAll extends Component {
 
   render() {
     return (
-      <div >
+      <div>
         <p>{this.state.cards}</p>
       </div>
-    )
+    );
   }
 }
