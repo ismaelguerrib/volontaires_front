@@ -6,12 +6,11 @@ import Dashboard from "./Pages/Dashboard";
 import Form from "./Component/Form";
 import ViewOne from "./Pages/ViewOne";
 import ViewAll from "./Pages/ViewAll";
-import Header from "./Component/Header";
+// import Header from "./Component/Header";
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/view/:beer_id" component={ViewOne} />
