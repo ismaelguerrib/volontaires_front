@@ -4,7 +4,7 @@ import Header from "./../Component/Header";
 
 export default class Details extends Component {
   state = {
-    cards: []
+    offer: []
   };
   // componentDidMount = () => {
   //   Axios.get(
