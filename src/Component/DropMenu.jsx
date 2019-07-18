@@ -9,10 +9,13 @@ const DropMenu = () => {
           <li className="drop-item">Logout</li>
         </NavLink>
         <NavLink activeClassName="is-active" className="drop-item" to="/articles" >
-          <li className="drop-item">Article Management</li>
+          <li className="drop-item">View All</li>
         </NavLink>
         <NavLink activeClassName="is-active" className="drop-item" to="/articles" >
-          <li className="drop-item">Profile</li>
+          <li className="drop-item">Dashboard</li>
+        </NavLink>
+        <NavLink activeClassName="is-active" className="drop-item" to="/articles" >
+          <li className="drop-item">Add a new one</li>
         </NavLink>
       </ul>
     </div>
