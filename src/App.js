@@ -13,9 +13,10 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route path="/i-want-to-be-helped" component={ViewAll} />
+        <Route path="/i-want-to-offer-help" component={ViewAll} />
         <Route path="/view/:cards_id" component={ViewOne} />
         <Route path="/form" component={Form} />
-        <Route path="/view" component={ViewAll} />
         <Route path="/dashboard" component={Dashboard} />
       </Switch>
     </div>
