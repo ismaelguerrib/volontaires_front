@@ -23,7 +23,6 @@ export default class Details extends Component {
         <Header />
         <div className="one-view-page">
           <img src="" alt="" />
-          <h1 />
           <p />
         </div>
         <p>Details</p>
