@@ -83,12 +83,12 @@ export default class APIHandler extends HTTPRequestChecker {
 
   destroy(route, id) {
     super.checkRoute(route);
-    if (!id || typeof id !== "number")
-      throw new Error(
-        `${
-          this.name
-        } replace() function expects id argument to be of type number`
-      );
+    // if (!id || typeof id !== "number")
+    //   throw new Error(
+    //     `${
+    //       this.name
+    //     } replace() function expects id argument to be of type number`
+    //   );
     return this.api.delete(`${route}/${id}`);
   }
 }

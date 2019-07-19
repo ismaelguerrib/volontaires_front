@@ -36,7 +36,7 @@ export default class ViewOne extends Component {
       <div>
         <h2>Hello</h2>
         <h2>{this.state.singleRO.userId}</h2>
-        <DeleteButton></DeleteButton>
+        <DeleteButton id={this.props.match.params.cards_id}></DeleteButton>
       </div>
     )
   }
