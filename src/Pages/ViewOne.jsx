@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import apiHandler from "./../ApiHandler/Handler"
-import Axios from "axios";
 import DeleteButton from "./../Component/DeleteButton"
 const handler = new apiHandler(process.env.REACT_APP_BACK_URL)
 

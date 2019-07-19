@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import apiHandler from "./../ApiHandler/Handler"
 const handler = new apiHandler(process.env.REACT_APP_BACK_URL)
 
