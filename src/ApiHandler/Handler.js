@@ -67,7 +67,7 @@ export default class APIHandler extends HTTPRequestChecker {
           this.name
         } update() function expects payload argument to be of type Object`
       );
-    return this.api.patch(route);
+    return this.api.patch(route, payload);
   }
 
   replace(route, payload) {

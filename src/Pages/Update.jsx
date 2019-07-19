@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import APIHandler from "../ApiHandler/Handler";
-
+// import axios from "axios";
 const apiHandler = new APIHandler(process.env.REACT_APP_BACK_URL);
 
 export default class Update extends Component {
@@ -8,54 +8,58 @@ export default class Update extends Component {
     name: "",
     description: "",
     location: "",
-    tags: "",
-    date: ""
+    tags: ""
+    // date: ""
   };
 
   handleChange = evt => {
     evt.preventDefault();
     const { name, value } = evt.target;
     this.setState({ [name]: value });
-    console.log(this.setState);
   };
 
   handleSubmit = evt => {
-    console.log(this.state.obj);
-
-    console.log(this.props.match.params.id);
     evt.preventDefault();
-    if (this.props.match.path === "/create-an-offer") {
-      apiHandler.update(
-        "/api/offers/" + this.props.match.params.id,
-        this.state.obj
-      );
-    } else {
-      apiHandler.update(
-        "/api/requests/" + this.props.match.params.id,
-        this.state.obj
-      );
-    }
+    // console.log(this.state);
+    // console.log(this.props.match.params.id);
+    // console.log("====>>>", this.props);
+    // if (this.props.match.path === "/create-an-offer") {
+    console.log("offer", this.state);
+
+    apiHandler
+      .update(`api/offers/${this.props.match.params.id}`, this.state)
+      .then(res => console.log("updated", res))
+      .catch(err => console.log(err));
+    // // } else if (this.props.match.path === "/create-a-request") {
+    //   console.log("req");
+    //   apiHandler
+    //     .update("/api/requests/" + this.props.match.params.id, this.state)
+    //     .then(res => console.log("updated", res))
+    //     .catch(err => console.log(err));
+    // }
   };
 
   componentDidMount() {
-    var newObj = {};
-
     apiHandler
       .get(
         "/api/offers/" + this.props.match.params.id ||
-          "/api/requests" + this.props.match.params.id,
-        0
+          "/api/requests" + this.props.match.params.id
       )
       .then(dbres => {
-        newObj = dbres.data;
-        //   this.setState()
-        //     {name: {dbres.data.name}}
-        //     description:  {dbres.data.description}
-        //     // location: "",
-        //     // tags: "",
-        //     // date: ""
+        console.log(dbres.data);
+        this.setState({
+          name: dbres.data.name,
+          description: dbres.data.description,
+          location: dbres.data.location,
+          tags: dbres.data.tags
+        });
+        //   this.setState({name: {dbres.data.name}, description:  {dbres.data.description}}
+        //     )
+        // location: "",
+        // tags: "",
+        // date: ""
 
-        this.setState({ obj: newObj });
+        // this.setState({ obj: newObj });
       })
       .catch(err => {
         console.log(err);
@@ -63,6 +67,7 @@ export default class Update extends Component {
   }
 
   render() {
+    const { name, description, location } = this.state;
     return (
       <div className="big-container-form">
         <h1> Update youre cards</h1>
@@ -73,25 +78,20 @@ export default class Update extends Component {
             onSubmit={this.handleSubmit}
           >
             <label htmlFor="name"> Title : </label>
-            <input
-              type="string"
-              name="name"
-              id="name"
-              defaultValue={this.state.obj.name}
-            />
+            <input type="string" name="name" id="name" defaultValue={name} />
             <label htmlFor="description"> Description :</label>
             <input
               type="string"
               name="description"
               id="description"
-              defaultValue={this.state.obj.description}
+              defaultValue={description}
             />
             <label htmlFor="location">Location: </label>
             <input
               type="string"
               name="location"
               id="location"
-              defaultValue={this.state.obj.location}
+              defaultValue={location}
             />
             <label htmlFor="tags">Catégorie :</label>
             <select name="tags" form="create-one">
@@ -108,7 +108,7 @@ export default class Update extends Component {
               type="date"
               name="date"
               id="date"
-              defaultValue={this.state.obj.date}
+              //   defaultValue={this.state.obj.date}
             />
             <button> Submit </button>
           </form>
