@@ -5,7 +5,7 @@ const apiHandler = new APIHandler();
 
 export default class Form extends Component {
   state = {
-    title: "",
+    name: "",
     description: "",
     location: "",
     tags: "",
@@ -35,8 +35,8 @@ export default class Form extends Component {
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
         >
-          <label htmlFor="title"> Title : </label>
-          <input type="string" name="title" id="title" />
+          <label htmlFor="name"> Title : </label>
+          <input type="string" name="name" id="name" />
           <label htmlFor="description"> Description :</label>
           <input type="string" name="description" id="description" />
           <label htmlFor="location">Location: </label>
