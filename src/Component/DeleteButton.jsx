@@ -1,24 +1,23 @@
 import React, { Component } from 'react'
 import apiHandler from "./../ApiHandler/Handler"
 import Axios from "axios";
-import DeleteButton from "./../Component/DeleteButton"
 const handler = new apiHandler(process.env.REACT_APP_BACK_URL)
 
 
-export default class ViewOne extends Component {
+export default class DeleteButton extends Component {
   state = {
 
     singleRO: []
   }
 
-  componentDidMount = () => {
+  handledelete = () => {
     console.log(apiHandler)
     // console.log(this.props.match.params.cards_id)
     // const route = `${process.env.REACT_APP_BACK_URL}/cards/${this.props.match.params.cards_id}`;
-    handler.get(`/api/offers/${this.props.match.params.cards_id}` || `/api/requests/${this.props.match.params.cards_id}`)
+    handler.destroy("/api/offers/" || "/api/requests/", this.props.match.params.cards_id)
       .then(apiRes => {
         console.log(apiRes.data);
-        this.setState({ singleRO: apiRes.data });
+        // this.setState({ singleRO: apiRes.data });
       })
       .catch(apiErr => console.error(apiErr));
     // apiHandler
@@ -34,9 +33,7 @@ export default class ViewOne extends Component {
   render() {
     return (
       <div>
-        <h2>Hello</h2>
-        <h2>{this.state.singleRO.userId}</h2>
-        <DeleteButton></DeleteButton>
+        <button >Delete This</button>
       </div>
     )
   }
