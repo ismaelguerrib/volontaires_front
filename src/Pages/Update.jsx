@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import APIHandler from "../ApiHandler/Handler";
-// import axios from "axios";
 const apiHandler = new APIHandler(process.env.REACT_APP_BACK_URL);
 
 export default class Update extends Component {
@@ -8,8 +7,8 @@ export default class Update extends Component {
     name: "",
     description: "",
     location: "",
-    tags: ""
-    // date: ""
+    tags: "",
+    time: ""
   };
 
   handleChange = evt => {
@@ -23,20 +22,20 @@ export default class Update extends Component {
     // console.log(this.state);
     // console.log(this.props.match.params.id);
     // console.log("====>>>", this.props);
-    // if (this.props.match.path === "/create-an-offer") {
-    console.log("offer", this.state);
+    if (this.props.match.path === "/create-an-offer") {
+      console.log("offer", this.state);
 
-    apiHandler
-      .update(`api/offers/${this.props.match.params.id}`, this.state)
-      .then(res => console.log("updated", res))
-      .catch(err => console.log(err));
-    // // } else if (this.props.match.path === "/create-a-request") {
-    //   console.log("req");
-    //   apiHandler
-    //     .update("/api/requests/" + this.props.match.params.id, this.state)
-    //     .then(res => console.log("updated", res))
-    //     .catch(err => console.log(err));
-    // }
+      apiHandler
+        .update(`api/offers/${this.props.match.params.id}`, this.state)
+        .then(res => console.log("updated", res))
+        .catch(err => console.log(err));
+    } else {
+      console.log("req", this.props);
+      apiHandler
+        .update("/api/requests/" + this.props.match.params.id, this.state)
+        .then(res => console.log("updated", res))
+        .catch(err => console.log(err));
+    }
   };
 
   componentDidMount() {
@@ -67,7 +66,7 @@ export default class Update extends Component {
   }
 
   render() {
-    const { name, description, location } = this.state;
+    const { name, description, location, time } = this.state;
     return (
       <div className="big-container-form">
         <h1> Update youre cards</h1>
@@ -103,13 +102,8 @@ export default class Update extends Component {
               <option value="Nursering">Nursering</option>
               <option value="Other">Other</option>
             </select>
-            <label htmlFor="date">Date :</label>
-            <input
-              type="date"
-              name="date"
-              id="date"
-              //   defaultValue={this.state.obj.date}
-            />
+            <label htmlFor="time">Date :</label>
+            <input type="date" name="time" id="date" defaultValue={time} />
             <button> Submit </button>
           </form>
         </div>

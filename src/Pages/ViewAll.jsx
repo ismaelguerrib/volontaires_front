@@ -16,13 +16,11 @@ export default class ViewAll extends Component {
           console.log(dbres.data);
           this.setState({ cards: dbres.data });
           console.log(this.state.cards);
-
         })
         .catch(err => {
           console.log(err);
         });
-    }
-    else {
+    } else {
       console.log("weeee uaglio");
 
       Axios.get(`${process.env.REACT_APP_BACK_URL}/api/requests`)
@@ -31,20 +29,17 @@ export default class ViewAll extends Component {
 
           this.setState({ cards: dbres.data });
           console.log(this.state.cards);
-
         })
         .catch(err => {
           console.log(err);
         });
     }
-  }
-
+  };
 
   render() {
-
     return (
       <div>
-        <Card cont={this.state.cards}></Card>
+        <Card cont={this.state.cards} route={this.props.match.path} />
       </div>
     );
   }
