@@ -19,7 +19,7 @@ export default class ViewOne extends Component {
         console.log(apiRes.data);
         this.setState({ singleRO: apiRes.data });
       })
-      .catch(apiErr => console.error(apiErr));
+      .catch(apiErr => console.error(apiErr.response.data));
     // apiHandler
     //   .get(`${process.env.REACT_APP_BACK_URL}/api/offers/${this.props.match.params.cards_id}`)
     //   .then(apiRes => {
@@ -35,7 +35,7 @@ export default class ViewOne extends Component {
       <div>
         <h2>Hello</h2>
         <h2>{this.state.singleRO.userId}</h2>
-        <DeleteButton id={this.props.match.params.cards_id}></DeleteButton>
+        <DeleteButton history={this.props.history} id={this.props.match.params.cards_id}></DeleteButton>
       </div>
     )
   }
