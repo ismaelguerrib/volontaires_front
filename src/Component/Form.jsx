@@ -30,7 +30,7 @@ export default class Form extends Component {
   render() {
     return (
       <div className="big-container-form">
-        <h1> Create you're own cards</h1>
+        <h1> Create youre own cards</h1>
         <div className="form-container">
           <form
             id="form"

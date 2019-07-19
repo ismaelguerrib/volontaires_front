@@ -9,6 +9,7 @@ import ViewAll from "./Pages/ViewAll";
 import OptionOffer from "./Pages/OptionOffer";
 import OptionRequest from "./Pages/OptionRequest";
 import About from "./Pages/About";
+import Update from "./Pages/Update";
 // import Header from "./Component/Header";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/create-a-request" component={Form} />
         <Route path="/option-offer" component={OptionOffer} />
         <Route path="/option-request" component={OptionRequest} />
+        <Route path="/update-form/:id" component={Update} />
       </Switch>
     </div>
   );

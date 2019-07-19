@@ -1,20 +1,24 @@
-import React, { Component } from 'react'
-import apiHandler from "./../ApiHandler/Handler"
-import DeleteButton from "./../Component/DeleteButton"
-const handler = new apiHandler(process.env.REACT_APP_BACK_URL)
-
+import React, { Component } from "react";
+import apiHandler from "./../ApiHandler/Handler";
+import DeleteButton from "./../Component/DeleteButton";
+import UpdateButton from "../Component/UpdateButton";
+// import UpdateButton from "";
+const handler = new apiHandler(process.env.REACT_APP_BACK_URL);
 
 export default class ViewOne extends Component {
   state = {
-
     singleRO: []
-  }
+  };
 
   componentDidMount = () => {
-    console.log(apiHandler)
+    console.log(apiHandler);
     // console.log(this.props.match.params.cards_id)
     // const route = `${process.env.REACT_APP_BACK_URL}/cards/${this.props.match.params.cards_id}`;
-    handler.get(`/api/offers/${this.props.match.params.cards_id}` || `/api/requests/${this.props.match.params.cards_id}`)
+    handler
+      .get(
+        `/api/offers/${this.props.match.params.cards_id}` ||
+          `/api/requests/${this.props.match.params.cards_id}`
+      )
       .then(apiRes => {
         console.log(apiRes.data);
         this.setState({ singleRO: apiRes.data });
@@ -27,16 +31,22 @@ export default class ViewOne extends Component {
     //     this.setState({ beer: apiRes.data });
     //   })
     //   .catch(apiErr => console.error(apiErr));
-  }
-
+  };
 
   render() {
     return (
       <div>
         <h2>Hello</h2>
         <h2>{this.state.singleRO.userId}</h2>
-        <DeleteButton history={this.props.history} id={this.props.match.params.cards_id}></DeleteButton>
+        <DeleteButton
+          history={this.props.history}
+          id={this.props.match.params.cards_id}
+        />
+        <UpdateButton
+          history={this.props.history}
+          id={this.props.match.params.cards_id}
+        />
       </div>
-    )
+    );
   }
 }
