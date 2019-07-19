@@ -11,22 +11,29 @@ function NavMain() {
           <NavLink activeClassName="is-active" exact to="/home">
             <h1 className="nav-logo">Volunteers</h1>
           </NavLink>
-          <NavLink
-            activeClassName="is-active"
-            className="nav-item"
-            to="/articles"
-          >
-            Articles
-          </NavLink>
           <NavLink activeClassName="is-active" className="nav-item" to="/about">
             About
           </NavLink>
-        
-          <NavLink activeClassName="is-active" className="nav-item" to="/form">
-            Sign Up
+          <NavLink
+            activeClassName="is-active"
+            className="nav-item"
+            to="/api/offers"
+          >
+            View All Offers
           </NavLink>
-          <NavLink activeClassName="is-active" className="nav-item" to="/postform">
-            Create Post
+          <NavLink
+            activeClassName="is-active"
+            className="nav-item"
+            to="/api/requests"
+          >
+            View All Requests
+          </NavLink>
+          <NavLink
+            activeClassName="is-active"
+            className="nav-item"
+            to="/dashboard/:_id"
+          >
+            Dashboard
           </NavLink>
         </div>
         <div className="nav-side">
