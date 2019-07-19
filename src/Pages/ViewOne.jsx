@@ -11,13 +11,14 @@ export default class ViewOne extends Component {
   };
 
   componentDidMount = () => {
+    console.log(this.props);
     console.log(apiHandler);
     // console.log(this.props.match.params.cards_id)
     // const route = `${process.env.REACT_APP_BACK_URL}/cards/${this.props.match.params.cards_id}`;
     handler
       .get(
         `/api/offers/${this.props.match.params.cards_id}` ||
-          `/api/requests/${this.props.match.params.cards_id}`
+        `/api/requests/${this.props.match.params.cards_id}`
       )
       .then(apiRes => {
         console.log(apiRes.data);

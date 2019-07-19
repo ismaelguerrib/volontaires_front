@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-export default function UpdateButton({ id }) {
+export default function UpdateButton({ id, history }) {
+  console.log(history.location)
   return (
-    <div>
-      <Link to={`/update-form/${id}`} className="link">
+
+
+    < div >
+      <Link to={`/update-form${history.location.pathname}`} className="link">
         update
       </Link>
-    </div>
+    </div >
   );
 }

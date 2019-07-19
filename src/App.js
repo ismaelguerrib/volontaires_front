@@ -21,12 +21,26 @@ function App() {
         <Route path="/dashboard/:_id" component={Dashboard} />
         <Route path="/i-want-to-be-helped" component={ViewAll} />
         <Route path="/i-want-to-offer-help" component={ViewAll} />
-        <Route path="/cards/:cards_id" component={ViewOne} />
+        <Route
+          path="/cards/i-want-to-be-helped/:cards_id"
+          component={ViewOne}
+        />
+        <Route
+          path="/cards/i-want-to-offer-help/:cards_id"
+          component={ViewOne}
+        />
         <Route path="/create-an-offer" component={Form} />
         <Route path="/create-a-request" component={Form} />
         <Route path="/option-offer" component={OptionOffer} />
         <Route path="/option-request" component={OptionRequest} />
-        <Route path="/update-form/:id" component={Update} />
+        <Route
+          path="/update-form/cards/i-want-to-be-helped/:id"
+          component={Update}
+        />
+        <Route
+          path="/update-form/cards/i-want-to-offer-help/:id"
+          component={Update}
+        />
       </Switch>
     </div>
   );

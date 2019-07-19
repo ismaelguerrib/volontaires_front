@@ -18,13 +18,16 @@ export default class Update extends Component {
   };
 
   handleSubmit = evt => {
+
+
+
+
     evt.preventDefault();
     // console.log(this.state);
     // console.log(this.props.match.params.id);
     // console.log("====>>>", this.props);
-    if (this.props.match.path === "/create-an-offer") {
+    if (this.props.match.path === "/update-form/cards/i-want-to-be-helped/:id") {
       console.log("offer", this.state);
-
       apiHandler
         .update(`api/offers/${this.props.match.params.id}`, this.state)
         .then(res => console.log("updated", res))
@@ -39,13 +42,13 @@ export default class Update extends Component {
   };
 
   componentDidMount() {
+    console.log(this.props.match.params);
     apiHandler
       .get(
-        "/api/offers/" + this.props.match.params.id ||
-          "/api/requests" + this.props.match.params.id
+        `/api/offers/${this.props.match.params.id}`
       )
       .then(dbres => {
-        console.log(dbres.data);
+        console.log(dbres);
         this.setState({
           name: dbres.data.name,
           description: dbres.data.description,
