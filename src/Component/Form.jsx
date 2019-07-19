@@ -9,7 +9,7 @@ export default class Form extends Component {
     description: "",
     location: "",
     tags: "",
-    date: ""
+    time: ""
   };
 
   handleChange = evt => {
@@ -53,8 +53,8 @@ export default class Form extends Component {
               <option value="Nursering">Nursering</option>
               <option value="Other">Other</option>
             </select>
-            <label htmlFor="date">Date :</label>
-            <input type="date" name="date" id="date" />
+            <label htmlFor="time">Date :</label>
+            <input type="date" name="time" id="date" />
             <button> Submit </button>
           </form>
         </div>
