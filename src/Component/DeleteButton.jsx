@@ -15,11 +15,7 @@ export default function DeleteButton({ id, history }) {
 
   return (
     <div>
-
-
       <button onClick={destruction}>Delete This</button>
-
-
     </div>
   )
 }
