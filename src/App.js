@@ -15,7 +15,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/i-want-to-be-helped" component={ViewAll} />
         <Route path="/i-want-to-offer-help" component={ViewAll} />
-        <Route path="/view/:cards_id" component={ViewOne} />
+        <Route path="/cards/:cards_id" component={ViewOne} />
         <Route path="/create-an-offer" component={Form} />
         <Route path="/create-a-request" component={Form} />
         {/* <Route path="/dashboard" component={Dashboard} /> */}

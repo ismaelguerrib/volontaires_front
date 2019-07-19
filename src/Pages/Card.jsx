@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import Axios from "axios"
 
 export default function Card({ cont }) {
-  Axios.get()
   return (
     <div>
       <div>
@@ -12,8 +11,9 @@ export default function Card({ cont }) {
             <Link to={`/cards/${card._id}`} className="link">
               <img src={card.image_url} alt="" />
               <h4>{card.name}</h4>
-              <p>{card.tagline}</p>
-              <p>{card.contributed_by}</p>
+              <p>{card.tags}</p>
+              <p>{card.location}</p>
+              <p>{card.time}</p>
             </Link>
           </div>
         ))}
