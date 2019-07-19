@@ -7,8 +7,10 @@ export default class Home extends Component {
     return (
       <div className="wrapper">
         <Header />
-        <Button content="I wish to be helped" link="/option-request" />
-        <Button content="I would like to help others" link="/option-offer" />
+        <div className="buttons">
+          <Button content="I wish to be helped" link="/option-request" />
+          <Button content="I would like to help others" link="/option-offer" />
+        </div>
       </div>
     );
   }

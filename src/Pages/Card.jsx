@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Axios from "axios"
+import React from "react";
+import { Link } from "react-router-dom";
+// import Axios from "axios"
 
 export default function Card({ cont }) {
   return (
@@ -19,5 +19,5 @@ export default function Card({ cont }) {
         ))}
       </div>
     </div>
-  )
+  );
 }

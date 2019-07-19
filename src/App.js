@@ -8,6 +8,7 @@ import ViewOne from "./Pages/ViewOne";
 import ViewAll from "./Pages/ViewAll";
 import OptionOffer from "./Pages/OptionOffer";
 import OptionRequest from "./Pages/OptionRequest";
+import About from "./Pages/About";
 // import Header from "./Component/Header";
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/dashboard/:_id" component={Dashboard} />
         <Route path="/i-want-to-be-helped" component={ViewAll} />
         <Route path="/i-want-to-offer-help" component={ViewAll} />
         <Route path="/cards/:cards_id" component={ViewOne} />
@@ -22,7 +25,6 @@ function App() {
         <Route path="/create-a-request" component={Form} />
         <Route path="/option-offer" component={OptionOffer} />
         <Route path="/option-request" component={OptionRequest} />
-        {/* <Route path="/dashboard" component={Dashboard} /> */}
       </Switch>
     </div>
   );
