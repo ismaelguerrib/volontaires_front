@@ -20,6 +20,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/home" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/signup" component={Signup} />
         <Route path="/signin" component={SignIn} />
