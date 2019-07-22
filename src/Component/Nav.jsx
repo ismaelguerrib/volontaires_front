@@ -19,14 +19,14 @@ function NavMain() {
           <NavLink
             activeClassName="is-active"
             className="nav-item"
-            to="/api/offers"
+            to="/i-want-to-be-helped"
           >
             View All Offers
           </NavLink>
           <NavLink
             activeClassName="is-active"
             className="nav-item"
-            to="/api/requests"
+            to="/i-want-to-offer-help"
           >
             View All Requests
           </NavLink>
