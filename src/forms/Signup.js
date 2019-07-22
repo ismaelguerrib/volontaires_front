@@ -7,12 +7,14 @@ const apiHandler = new APIHandler();
 export default class Signup extends Component {
   state = {
     isPasswordOk: false,
-    name: "foo",
+    firstname: "foo",
     lastname: "bar",
     email: "foo@bar.baz",
     avatar: "",
     password: "1234",
-    passwordConfirm: "1234"
+    passwordConfirm: "1234",
+    role: "Help Offerer",
+    age: 0
   };
 
   constructor() {
@@ -45,23 +47,28 @@ export default class Signup extends Component {
 
     const file = this.avatarRef.current.files[0];
     const {
-      name,
+      firstname,
       lastname,
       email,
       password,
       passwordConfirm,
-      avatar
+      avatar,
+      role,
+      age
     } = this.state;
     // simulate multipart/formdata ...
     const fd = new FormData();
-    fd.append("name", name); // accessible @backend as req.body.name ...
+    fd.append("firstname", firstname); // accessible @backend as req.body.name ...
     fd.append("lastname", lastname); // req.body.lastname
     fd.append("email", email); // req.body.email
     fd.append("password", password); // req.body./password
+    fd.append("role", role); // req.body./password
+    fd.append("age", age); // req.body./password
     if (file) fd.set("avatar", file, file.name);
     // above, note the difference : fd.SET !!! accessible @backend as req.file ...
 
     console.log("file ? ", file);
+    console.log(fd);
 
     apiHandler
       .post("/signup", fd) // let's post the built formData object as a regular payload
@@ -81,12 +88,30 @@ export default class Signup extends Component {
 
   render() {
     const { handleChange, handleSubmit, toggleFilePicker } = this;
-    const { name, lastname, email, password, passwordConfirm } = this.state;
+    const {
+      firstname,
+      lastname,
+      email,
+      password,
+      passwordConfirm,
+      age,
+      role
+    } = this.state;
     return (
       <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
         <h1 className="title">Signup</h1>
-        <label htmlFor="name">name</label>
-        <input name="name" id="name" type="text" defaultValue={name} />
+        <label htmlFor="role">Role</label>
+        <select value={this.state.role} name="role" id="">
+          <option value="Help Offerer">I want to help</option>
+          <option value="Help Requester">I wish to be helped</option>
+        </select>
+        <label htmlFor="firstname">name</label>
+        <input
+          name="firstname"
+          id="firstname"
+          type="text"
+          defaultValue={firstname}
+        />
         <label htmlFor="lastname">lastname</label>
         <input
           name="lastname"
@@ -95,7 +120,15 @@ export default class Signup extends Component {
           defaultValue={lastname}
         />
         <label htmlFor="email">email</label>
-        <input id="email" name="email" type="text" defaultValue={email} />
+        <input id="email" name="email" type="email" defaultValue={email} />
+        <label htmlFor="age">Age</label>
+        <input
+          id="age"
+          name="age"
+          type="number"
+          step="1"
+          defaultValue={email}
+        />
 
         <label htmlFor="password">password</label>
         <input

@@ -6,7 +6,7 @@ const apiHandler = new APIHandler();
 
 export default class ContactForm extends Component {
   state = {
-    name: "",
+    firstname: "",
     lastname: "",
     email: "",
     subject: "js",
@@ -14,8 +14,8 @@ export default class ContactForm extends Component {
   };
 
   checkForm() {
-    const { name, lastname, email, subject, message } = this.state;
-    return name && lastname && email && subject && message;
+    const { firstname, lastname, email, subject, message } = this.state;
+    return firstname && lastname && email && subject && message;
   }
 
   handleSubmit = e => {
@@ -43,8 +43,8 @@ export default class ContactForm extends Component {
         onSubmit={this.handleSubmit}
         onChange={this.handleChange}
       >
-        <label htmlFor="name">name</label>
-        <input id="name" name="name" type="text" />
+        <label htmlFor="firstname">name</label>
+        <input id="firstname" name="firstname" type="text" />
         <label htmlFor="lastname">lastname</label>
         <input id="lastname" name="lastname" type="text" />
         <label htmlFor="email">email</label>
