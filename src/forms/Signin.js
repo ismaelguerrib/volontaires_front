@@ -12,8 +12,11 @@ export default class Signin extends Component {
     // 1 - the classic event object
     // 2 - the signin function, passed by the AuthConsumer
     evt.preventDefault();
-    signin((status) => { // this callback is executed inside the Provider !!!
-      this.props.redirect("/dashboard");
+    signin(status => {
+      // this callback is executed inside the Provider !!!
+      console.log("should be here", status);
+      console.log(this.props);
+      if (status) this.props.history.push("/dashboard");
     }, this.state);
   };
 
@@ -32,7 +35,7 @@ export default class Signin extends Component {
         {({ signin }) => (
           <form
             className="form"
-            onSubmit={evt => handleSubmit(evt, signin)} 
+            onSubmit={evt => handleSubmit(evt, signin)}
             onChange={handleChange}
           >
             <h1 className="title">Signin</h1>
@@ -52,5 +55,3 @@ export default class Signin extends Component {
     );
   }
 }
-
-

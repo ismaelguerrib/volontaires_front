@@ -6,7 +6,7 @@ import axios from "axios";
 // this will allow axios to send the auth cookie, provided by express, with each request
 const apiAuthHandler = axios.create({
   withCredentials: true,
-  baseURL: process.env.REACT_APP_BACKEND_URL
+  baseURL: process.env.REACT_APP_BACK_URL
 });
 
 /*
