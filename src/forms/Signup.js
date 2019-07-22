@@ -76,7 +76,7 @@ export default class Signup extends Component {
         // everything is fine, redirect to dashboard
         console.log(this.props);
         this.props.history.push("/dashboard");
-        console.log(serverRes);
+        if (serverRes.response) console.log(serverRes.response);
       })
       .catch(serverErr => console.error(serverErr));
   };
@@ -101,9 +101,9 @@ export default class Signup extends Component {
       <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
         <h1 className="title">Signup</h1>
         <label htmlFor="role">Role</label>
-        <select defaultValue={this.state.role} name="role" id="">
-          <option defaultValue="Help Offerer">I want to help</option>
-          <option defaultValue="Help Requester">I wish to be helped</option>
+        <select name="role" id="">
+          <option value="Help Offerer">I want to help</option>
+          <option value="Help Requester">I wish to be helped</option>
         </select>
         <label htmlFor="firstname">name</label>
         <input
