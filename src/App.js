@@ -10,6 +10,8 @@ import OptionOffer from "./Pages/OptionOffer";
 import OptionRequest from "./Pages/OptionRequest";
 import About from "./Pages/About";
 import Update from "./Pages/Update";
+import Signup from "./forms/Signup";
+import SignIn from "./forms/Signin";
 // import Header from "./Component/Header";
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/signin" component={SignIn} />
         <Route path="/dashboard/:_id" component={Dashboard} />
         <Route path="/i-want-to-be-helped" component={ViewAll} />
         <Route path="/i-want-to-offer-help" component={ViewAll} />

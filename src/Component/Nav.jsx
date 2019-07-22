@@ -43,6 +43,26 @@ function NavMain() {
             to="/signin"
           >
             <button className="btn-nav">
+              Sign In
+              <FontAwesomeIcon icon="angle-right" className="arrow-btn" />
+            </button>
+          </NavLink>
+          <NavLink
+            activeClassName="is-active"
+            className="nav-item-link"
+            to="/signup"
+          >
+            <button className="btn-nav">
+              Sign up
+              <FontAwesomeIcon icon="angle-right" className="arrow-btn" />
+            </button>
+          </NavLink>
+          <NavLink
+            activeClassName="is-active"
+            className="nav-item-link"
+            to="/signin"
+          >
+            <button className="btn-nav">
               My Account
               <FontAwesomeIcon icon="angle-right" className="arrow-btn" />
             </button>
