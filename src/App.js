@@ -12,6 +12,7 @@ import About from "./Pages/About";
 import Update from "./Pages/Update";
 import Signup from "./forms/Signup";
 import SignIn from "./forms/Signin";
+import ProtectedRoute from "./auth/ProtectedRoute";
 // import Header from "./Component/Header";
 
 function App() {
@@ -33,8 +34,8 @@ function App() {
           path="/cards/i-want-to-offer-help/:cards_id"
           component={ViewOne}
         />
-        <Route path="/create-an-offer" component={Form} />
-        <Route path="/create-a-request" component={Form} />
+        <ProtectedRoute path="/create-an-offer" component={Form} />
+        <ProtectedRoute path="/create-a-request" component={Form} />
         <Route path="/option-offer" component={OptionOffer} />
         <Route path="/option-request" component={OptionRequest} />
         <Route
