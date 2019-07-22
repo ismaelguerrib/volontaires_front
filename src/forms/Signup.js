@@ -75,7 +75,7 @@ export default class Signup extends Component {
       .then(serverRes => {
         // everything is fine, redirect to dashboard
         console.log(this.props);
-        this.props.redirect("/dashboard");
+        this.props.history.push("/dashboard");
         console.log(serverRes);
       })
       .catch(serverErr => console.error(serverErr));
@@ -127,7 +127,9 @@ export default class Signup extends Component {
           name="age"
           type="number"
           step="1"
-          defaultValue={email}
+          max="140"
+          min="0"
+          defaultValue={age}
         />
 
         <label htmlFor="password">password</label>
