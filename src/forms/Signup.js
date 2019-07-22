@@ -101,9 +101,9 @@ export default class Signup extends Component {
       <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
         <h1 className="title">Signup</h1>
         <label htmlFor="role">Role</label>
-        <select value={this.state.role} name="role" id="">
-          <option value="Help Offerer">I want to help</option>
-          <option value="Help Requester">I wish to be helped</option>
+        <select defaultValue={this.state.role} name="role" id="">
+          <option defaultValue="Help Offerer">I want to help</option>
+          <option defaultValue="Help Requester">I wish to be helped</option>
         </select>
         <label htmlFor="firstname">name</label>
         <input
