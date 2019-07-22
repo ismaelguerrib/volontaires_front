@@ -73,7 +73,10 @@ class AuthProvider extends React.Component {
         // then ... exec the callback (leading to a redirect)
         clbk(serverRes.data.loginStatus);
       })
-      .catch(serverErr => this.setState({ isLoggedIn: false }));
+      .catch(serverErr => {
+        console.log(serverErr.response);
+        this.setState({ isLoggedIn: false });
+      });
   };
 
   signout = clbk => {
