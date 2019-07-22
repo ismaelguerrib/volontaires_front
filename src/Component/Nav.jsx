@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DropMenu from "./DropMenu";
+import { AuthConsumer } from "../auth/Guard"
+import SignoutIcon from "../auth/SignoutIcon";
 
 function NavMain() {
   return (
@@ -28,7 +30,53 @@ function NavMain() {
           >
             View All Requests
           </NavLink>
-          <NavLink
+          <AuthConsumer>
+            {({ loginStatus, signout }) =>
+              loginStatus === true ? (
+                <React.Fragment>
+                  <NavLink
+                    activeClassName="is-active"
+                    className="icon auth fa fa-user-circle fa-lg"
+                    to="/dashboard"
+                  />
+                  <SignoutIcon signout={signout} />
+                  <NavLink
+                    activeClassName="is-active"
+                    className="nav-item"
+                    to="/dashboard/:_id"
+                  >
+                    Dashboard
+          </NavLink>
+
+                </React.Fragment>
+              ) : (
+                  <React.Fragment>
+                    <NavLink
+                      activeClassName="is-active"
+                      className="nav-item-link"
+                      to="/signin"
+                    >
+                      <button className="btn-nav">
+                        Sign In
+              <FontAwesomeIcon icon="angle-right" className="arrow-btn" />
+                      </button>
+                    </NavLink>
+
+                    <NavLink
+                      activeClassName="is-active"
+                      className="nav-item-link"
+                      to="/signup"
+                    >
+                      <button className="btn-nav">
+                        Sign up
+              <FontAwesomeIcon icon="angle-right" className="arrow-btn" />
+                      </button>
+                    </NavLink>
+                  </React.Fragment>
+                )
+            }
+          </AuthConsumer>
+          {/* <NavLink
             activeClassName="is-active"
             className="nav-item"
             to="/dashboard/:_id"
@@ -66,7 +114,7 @@ function NavMain() {
               My Account
               <FontAwesomeIcon icon="angle-right" className="arrow-btn" />
             </button>
-          </NavLink>
+          </NavLink> */}
           <DropMenu />
           {/* <NavLink activeClassName="is-active" to="/profile"></NavLink><FontAwesomeIcon icon="user-circle" className="faHeart" /> */}
         </div>
