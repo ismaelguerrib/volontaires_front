@@ -18,25 +18,40 @@
   color: #077b63;
 }
 
-/* .buttons-container {
-  height: 30%;
+.buttons-container {
   display: flex;
-  flex-direction: row;
-  background-color: red;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn-viewone {
+.btn-options {
   cursor: pointer;
   border: 1px solid #0cdcb0;
   background: white;
   color: #0cdcb0;
   padding: 0.5rem 1rem;
-  border-radius: 0.3rem;
+  border-radius: 9rem;
   font-size: 1rem;
   transition: all 0.2s ease-in;
   transition-property: color, border;
+  margin: 1rem;
 }
-.btn-viewone:hover {
+
+.btn-request {
+  background-color: white;
+}
+.btn-request:hover {
+  border: 1px solid white;
+  background-color: #077b63;
+  color: white;
+}
+.btn-offer {
+  background-color: #077b63;
+  color: white;
+}
+.btn-offer:hover {
   border: 1px solid #077b63;
+  background-color: white;
   color: #077b63;
-} */
+}

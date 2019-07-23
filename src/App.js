@@ -8,7 +8,6 @@ import ViewOne from "./Pages/ViewOne";
 import ViewAll from "./Pages/ViewAll";
 import OptionOffer from "./Pages/OptionOffer";
 import OptionRequest from "./Pages/OptionRequest";
-import About from "./Pages/About";
 import Update from "./Pages/Update";
 import Signup from "./forms/Signup";
 import SignIn from "./forms/Signin";
@@ -21,7 +20,6 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/home" component={Home} />
-        <Route path="/about" component={About} />
         <Route path="/signup" component={Signup} />
         <Route path="/signin" component={SignIn} />
         <Route path="/dashboard" component={Dashboard} />

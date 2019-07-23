@@ -14,9 +14,6 @@ function NavMain() {
           <NavLink activeClassName="is-active" exact to="/home">
             <img className="nav-logo" src={VolontaireLogo} alt="ourlogo" />
           </NavLink>
-          <NavLink activeClassName="is-active" className="nav-item" to="/about">
-            About
-          </NavLink>
           <NavLink
             activeClassName="is-active"
             className="nav-item"
@@ -50,36 +47,36 @@ function NavMain() {
                   </NavLink>
                 </React.Fragment>
               ) : (
-                  <React.Fragment>
-                    <NavLink
-                      activeClassName="is-active"
-                      className="nav-item-link"
-                      to="/signin"
-                    >
-                      <button className="btn-nav">
-                        Sign In
+                <React.Fragment>
+                  <NavLink
+                    activeClassName="is-active"
+                    className="nav-item-link"
+                    to="/signin"
+                  >
+                    <button className="btn-nav">
+                      Sign In
                       <FontAwesomeIcon
-                          icon="angle-right"
-                          className="arrow-btn"
-                        />
-                      </button>
-                    </NavLink>
+                        icon="angle-right"
+                        className="arrow-btn"
+                      />
+                    </button>
+                  </NavLink>
 
-                    <NavLink
-                      activeClassName="is-active"
-                      className="nav-item-link"
-                      to="/signup"
-                    >
-                      <button className="btn-nav">
-                        Sign up
+                  <NavLink
+                    activeClassName="is-active"
+                    className="nav-item-link"
+                    to="/signup"
+                  >
+                    <button className="btn-nav">
+                      Sign up
                       <FontAwesomeIcon
-                          icon="angle-right"
-                          className="arrow-btn"
-                        />
-                      </button>
-                    </NavLink>
-                  </React.Fragment>
-                )
+                        icon="angle-right"
+                        className="arrow-btn"
+                      />
+                    </button>
+                  </NavLink>
+                </React.Fragment>
+              )
             }
           </AuthConsumer>
 

@@ -1,0 +1,23 @@
+.Home-request-infos {
+  background-color: #0cdcb0;
+  color: white;
+}
+.Home-request-infos h2 {
+  margin: 1rem;
+  font-family: "Lobster Two", cursive;
+  text-align: right;
+}
+
+.buttons-container img {
+  width: 110%;
+}
+
+.Home-offer-infos {
+  color: #0cdcb0;
+  background-color: white;
+}
+
+.Home-offer-infos h2 {
+  margin: 1rem;
+  font-family: "Lobster Two", cursive;
+}

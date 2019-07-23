@@ -1,14 +1,13 @@
 /*FONT IMPORT*/
-@import url("https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700,900|Source+Sans+Pro:300,400,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700,900|Lobster+Two|Source+Sans+Pro:300,400,700,900&display=swap");
 
 /*FILE IMPORT*/
 
 @import "./nav.css";
 @import "./button.css";
-@import "./responsive.css";
+@import "./infos.css";
 
 /* RESET CSS */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,7 +16,7 @@
 
 body {
   margin: 0;
-  font-family: source-code-pro, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
 }
 
