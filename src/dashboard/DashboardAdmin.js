@@ -1,5 +1,10 @@
 import React from "react";
+import Request from "./../Component/Request";
 
 export default function DashboardAdmin({ user }) {
-  return <></>;
+  return (
+    <>
+      <Request user={user} />
+    </>
+  );
 }

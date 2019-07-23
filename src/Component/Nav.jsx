@@ -32,7 +32,7 @@ function NavMain() {
             View All Requests
           </NavLink>
           <AuthConsumer>
-            {({ loginStatus, signout }) =>
+            {({ loginStatus, signout, user }) =>
               loginStatus === true ? (
                 <React.Fragment>
                   <NavLink
@@ -44,42 +44,42 @@ function NavMain() {
                   <NavLink
                     activeClassName="is-active"
                     className="nav-item"
-                    to="/dashboard/:_id"
+                    to="/dashboard"
                   >
                     Dashboard
                   </NavLink>
                 </React.Fragment>
               ) : (
-                <React.Fragment>
-                  <NavLink
-                    activeClassName="is-active"
-                    className="nav-item-link"
-                    to="/signin"
-                  >
-                    <button className="btn-nav">
-                      Sign In
+                  <React.Fragment>
+                    <NavLink
+                      activeClassName="is-active"
+                      className="nav-item-link"
+                      to="/signin"
+                    >
+                      <button className="btn-nav">
+                        Sign In
                       <FontAwesomeIcon
-                        icon="angle-right"
-                        className="arrow-btn"
-                      />
-                    </button>
-                  </NavLink>
+                          icon="angle-right"
+                          className="arrow-btn"
+                        />
+                      </button>
+                    </NavLink>
 
-                  <NavLink
-                    activeClassName="is-active"
-                    className="nav-item-link"
-                    to="/signup"
-                  >
-                    <button className="btn-nav">
-                      Sign up
+                    <NavLink
+                      activeClassName="is-active"
+                      className="nav-item-link"
+                      to="/signup"
+                    >
+                      <button className="btn-nav">
+                        Sign up
                       <FontAwesomeIcon
-                        icon="angle-right"
-                        className="arrow-btn"
-                      />
-                    </button>
-                  </NavLink>
-                </React.Fragment>
-              )
+                          icon="angle-right"
+                          className="arrow-btn"
+                        />
+                      </button>
+                    </NavLink>
+                  </React.Fragment>
+                )
             }
           </AuthConsumer>
 
