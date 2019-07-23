@@ -16,7 +16,7 @@ export default class Signin extends Component {
       // this callback is executed inside the Provider !!!
       console.log("should be here", status);
       console.log(this.props);
-      if (status) this.props.history.push("/dashboard");
+      if (status) this.props.history.push("/");
     }, this.state);
   };
 
