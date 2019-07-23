@@ -1,0 +1,44 @@
+.nav-bar {
+  /* position: relative;
+  width: 100%;
+  /* padding: 0.05rem; */
+  /* border-bottom: 1px solid #f8f9fa;
+  background: white;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.08);  */
+}
+
+.nav-logo {
+  /* width: 65%; */
+}
+
+.nav-side {
+  /* display: flex;
+  align-items: center; */
+}
+
+.nav-item {
+  /* font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #ccccd4;
+  transition: color 0.2s ease-in; */
+}
+.nav-item:hover {
+  color: #0cdcb0;
+}
+
+.drop-menu-container {
+  position: absolute;
+  background: white;
+  top: 45px;
+  right: 2rem;
+  width: 200px;
+  height: 100px;
+  border-radius: 0.3rem;
+  transition: visibility 0.2s ease-in;
+  display: none;
+  z-index: 1;
+}
+
+.drop-menu-container:hover {
+  display: flex;
+}

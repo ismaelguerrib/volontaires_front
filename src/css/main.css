@@ -1,0 +1,56 @@
+/*FONT IMPORT*/
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700,900|Source+Sans+Pro:300,400,700,900&display=swap");
+
+/*FILE IMPORT*/
+
+@import "./nav.css";
+@import "./button.css";
+@import "./responsive.css";
+
+/* RESET CSS */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: source-code-pro, sans-serif;
+  font-size: 16px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*maybe leave those properties*/
+
+.app-container {
+  width: 100%;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1140px;
+  margin: 0 auto;
+}

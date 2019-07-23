@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DropMenu from "./DropMenu";
 import { AuthConsumer } from "../auth/Guard";
 import SignoutIcon from "../auth/SignoutIcon";
+import VolontaireLogo from "../images/logo.png";
 
 function NavMain() {
   return (
@@ -11,7 +12,7 @@ function NavMain() {
       <nav className="nav">
         <div className="nav-side">
           <NavLink activeClassName="is-active" exact to="/home">
-            <h1 className="nav-logo">Volunteers</h1>
+            <img className="nav-logo" src={VolontaireLogo} alt="ourlogo" />
           </NavLink>
           <NavLink activeClassName="is-active" className="nav-item" to="/about">
             About
@@ -81,51 +82,9 @@ function NavMain() {
               )
             }
           </AuthConsumer>
-          {/* <NavLink
-            activeClassName="is-active"
-            className="nav-item"
-            to="/dashboard/:_id"
-          >
-            Dashboard
-          </NavLink>
-        </div>
-        <div className="nav-side">
-          <NavLink
-            activeClassName="is-active"
-            className="nav-item-link"
-            to="/signin"
-          >
-            <button className="btn-nav">
-              Sign In
-              <FontAwesomeIcon icon="angle-right" className="arrow-btn" />
-            </button>
-          </NavLink>
-          <NavLink
-            activeClassName="is-active"
-            className="nav-item-link"
-            to="/signup"
-          >
-            <button className="btn-nav">
-              Sign up
-              <FontAwesomeIcon icon="angle-right" className="arrow-btn" />
-            </button>
-          </NavLink>
-          <NavLink
-            activeClassName="is-active"
-            className="nav-item-link"
-            to="/signin"
-          >
-            <button className="btn-nav">
-              My Account
-              <FontAwesomeIcon icon="angle-right" className="arrow-btn" />
-            </button>
-          </NavLink> */}
-          <DropMenu />
-          {/* <NavLink activeClassName="is-active" to="/profile"></NavLink><FontAwesomeIcon icon="user-circle" className="faHeart" /> */}
-        </div>
 
-        {/* <NavLink activeClassName="is-active"  to="/profile">Favorites</NavLink> */}
-        {/* <NavLink activeClassName="is-active"  to="/sign-in">Sign in</NavLink> */}
+          <DropMenu />
+        </div>
       </nav>
     </div>
   );

@@ -17,7 +17,7 @@ import ProtectedRoute from "./auth/ProtectedRoute";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app-container">
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/home" component={Home} />

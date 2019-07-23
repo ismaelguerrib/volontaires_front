@@ -4,7 +4,7 @@ import Button from "./../Component/Button";
 
 export default function OptionRequest() {
   return (
-    <div className="wrapper">
+    <div className="">
       <Header />
       <div className="buttons">
         <Button
