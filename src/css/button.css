@@ -1,3 +1,23 @@
+.btn-nav {
+  display: flex;
+  align-items: center;
+  color: #0cdcb0;
+  cursor: pointer;
+  border: none;
+  font-size: 0.8rem;
+  transition: all 0.2s ease-in;
+  transition-property: color;
+}
+@media only screen and (max-width: 700px) {
+  .btn-nav {
+    font-size: 50%;
+  }
+}
+
+.btn-nav:hover {
+  color: #077b63;
+}
+
 /* .buttons-container {
   height: 30%;
   display: flex;
@@ -18,20 +38,5 @@
 }
 .btn-viewone:hover {
   border: 1px solid #077b63;
-  color: #077b63;
-}
-
-.btn-nav {
-  display: flex;
-  align-items: center;
-  color: #0cdcb0;
-  cursor: pointer;
-  border: none;
-  font-size: 0.8rem;
-  transition: all 0.2s ease-in;
-  transition-property: color;
-}
-
-.btn-nav:hover {
   color: #077b63;
 } */
