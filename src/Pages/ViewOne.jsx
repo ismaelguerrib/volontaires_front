@@ -19,7 +19,7 @@ export default class ViewOne extends Component {
     handler
       .get(
         `/api/offers/${this.props.match.params.cards_id}` ||
-          `/api/requests/${this.props.match.params.cards_id}`
+        `/api/requests/${this.props.match.params.cards_id}`
       )
       .then(apiRes => {
         console.log(apiRes.data);
@@ -37,21 +37,19 @@ export default class ViewOne extends Component {
 
   render() {
     return (
-      <AuthConsumer>
-        {/* {({ loginStatus, signout }) => */}
-        <div>
-          <h2>Hello</h2>
-          <h2>{this.state.singleRO.userId}</h2>
-          <DeleteButton
-            history={this.props.history}
-            id={this.props.match.params.cards_id}
-          />
-          <UpdateButton
-            history={this.props.history}
-            id={this.props.match.params.cards_id}
-          />
-        </div>
-      </AuthConsumer>
+
+      <div>
+        <h1>{this.state.singleRO.name}</h1>
+        <h2>{this.state.singleRO.userId}</h2>
+        <DeleteButton
+          history={this.props.history}
+          id={this.props.match.params.cards_id}
+        />
+        <UpdateButton
+          history={this.props.history}
+          id={this.props.match.params.cards_id}
+        />
+      </div>
     );
   }
 }
