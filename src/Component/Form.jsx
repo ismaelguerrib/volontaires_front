@@ -67,6 +67,7 @@ export default class Form extends Component {
                     defaultValue={user.id}
                     name="userId"
                     ref={this.myRef}
+                    style={{ display: "none" }}
                   />
                 ) : (
                   <h1>nope</h1>
