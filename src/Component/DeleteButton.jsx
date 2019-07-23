@@ -5,7 +5,14 @@ const handler = new apiHandler(process.env.REACT_APP_BACK_URL)
 export default function DeleteButton({ id, history }) {
   console.log(id);
   const destruction = function handleDelete() {
-    handler.destroy("/api/offers/" || "/api/requests/", id)
+    if (history.location.pathname[17] === "b") {
+      handler.destroy("/api/offers/", id)
+        .then(apiRes => {
+          console.log(apiRes.data);
+          history.push("/")
+        })
+        .catch(apiErr => console.error(apiErr));
+    } else handler.destroy("/api/requests/", id)
       .then(apiRes => {
         console.log(apiRes.data);
         history.push("/")
