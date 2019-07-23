@@ -14,18 +14,32 @@ export default class ViewOne extends Component {
   componentDidMount = () => {
     console.log(this.props);
     console.log(apiHandler);
+    console.log(this.props.match.path);
+
     // console.log(this.props.match.params.cards_id)
     // const route = `${process.env.REACT_APP_BACK_URL}/cards/${this.props.match.params.cards_id}`;
-    handler
-      .get(
-        `/api/offers/${this.props.match.params.cards_id}` ||
-        `/api/requests/${this.props.match.params.cards_id}`
-      )
-      .then(apiRes => {
-        console.log(apiRes.data);
-        this.setState({ singleRO: apiRes.data });
-      })
-      .catch(apiErr => console.error(apiErr.response.data));
+    if (this.props.match.path === "/cards/i-want-to-be-helped/:cards_id") {
+      handler
+        .get(
+          `/api/offers/${this.props.match.params.cards_id}`
+        )
+        .then(apiRes => {
+          console.log(apiRes.data);
+          this.setState({ singleRO: apiRes.data });
+        })
+        .catch(apiErr => console.error(apiErr.response.data));
+    }
+    else {
+      handler
+        .get(
+          `/api/requests/${this.props.match.params.cards_id}`
+        )
+        .then(apiRes => {
+          console.log(apiRes.data);
+          this.setState({ singleRO: apiRes.data });
+        })
+        .catch(apiErr => console.error(apiErr.response.data));
+    }
     // apiHandler
     //   .get(`${process.env.REACT_APP_BACK_URL}/api/offers/${this.props.match.params.cards_id}`)
     //   .then(apiRes => {
