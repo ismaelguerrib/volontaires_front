@@ -20,20 +20,15 @@ export default class ViewOne extends Component {
     // const route = `${process.env.REACT_APP_BACK_URL}/cards/${this.props.match.params.cards_id}`;
     if (this.props.match.path === "/cards/i-want-to-be-helped/:cards_id") {
       handler
-        .get(
-          `/api/offers/${this.props.match.params.cards_id}`
-        )
+        .get(`/api/offers/${this.props.match.params.cards_id}`)
         .then(apiRes => {
           console.log(apiRes.data);
           this.setState({ singleRO: apiRes.data });
         })
         .catch(apiErr => console.error(apiErr.response.data));
-    }
-    else {
+    } else {
       handler
-        .get(
-          `/api/requests/${this.props.match.params.cards_id}`
-        )
+        .get(`/api/requests/${this.props.match.params.cards_id}`)
         .then(apiRes => {
           console.log(apiRes.data);
           this.setState({ singleRO: apiRes.data });
@@ -53,20 +48,25 @@ export default class ViewOne extends Component {
     return (
       <AuthConsumer>
         {({ loginStatus, user }) =>
-          loginStatus === true &&
-            user.id === this.state.singleRO.userId ? (
-              <div>
-                <h1>{this.state.singleRO.name}</h1>
-                <h2>{this.state.singleRO.userId}</h2>
-                <DeleteButton
-                  history={this.props.history}
-                  id={this.props.match.params.cards_id}
-                />
-                <UpdateButton
-                  history={this.props.history}
-                  id={this.props.match.params.cards_id}
-                />
-              </div>) : (<div><h2>jo</h2></div>)
+          loginStatus === true && user.id === this.state.singleRO.userId ? (
+            <div>
+              <h1>{this.state.singleRO.name}</h1>
+              <h2>{this.state.singleRO.userId}</h2>
+              <h2>{user.id}</h2>
+              <DeleteButton
+                history={this.props.history}
+                id={this.props.match.params.cards_id}
+              />
+              <UpdateButton
+                history={this.props.history}
+                id={this.props.match.params.cards_id}
+              />
+            </div>
+          ) : (
+            <div>
+              <h2>jo</h2>
+            </div>
+          )
         }
       </AuthConsumer>
     );
