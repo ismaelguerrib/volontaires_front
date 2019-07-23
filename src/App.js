@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-import Dashboard from "./Pages/Dashboard";
+import Dashboard from "./dashboard/Dashboard";
 import Form from "./Component/Form";
 import ViewOne from "./Pages/ViewOne";
 import ViewAll from "./Pages/ViewAll";
@@ -24,7 +24,7 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/signup" component={Signup} />
         <Route path="/signin" component={SignIn} />
-        <Route path="/dashboard/:_id" component={Dashboard} />
+        <Route path="/dashboard" component={Dashboard} />
         <Route path="/i-want-to-be-helped" component={ViewAll} />
         <Route path="/i-want-to-offer-help" component={ViewAll} />
         <Route
