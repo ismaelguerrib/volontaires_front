@@ -51,19 +51,24 @@ export default class ViewOne extends Component {
 
   render() {
     return (
-
-      <div>
-        <h1>{this.state.singleRO.name}</h1>
-        <h2>{this.state.singleRO.userId}</h2>
-        <DeleteButton
-          history={this.props.history}
-          id={this.props.match.params.cards_id}
-        />
-        <UpdateButton
-          history={this.props.history}
-          id={this.props.match.params.cards_id}
-        />
-      </div>
+      <AuthConsumer>
+        {({ loginStatus, user }) =>
+          loginStatus === true &&
+            user.id === this.state.singleRO.userId ? (
+              <div>
+                <h1>{this.state.singleRO.name}</h1>
+                <h2>{this.state.singleRO.userId}</h2>
+                <DeleteButton
+                  history={this.props.history}
+                  id={this.props.match.params.cards_id}
+                />
+                <UpdateButton
+                  history={this.props.history}
+                  id={this.props.match.params.cards_id}
+                />
+              </div>) : (<div><h2>jo</h2></div>)
+        }
+      </AuthConsumer>
     );
   }
 }
