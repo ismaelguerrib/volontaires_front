@@ -7,14 +7,17 @@ export default function Dashboard() {
   return (
     <div>
       <h1 className="title">Dashboard</h1>
-      <p>Yo, welcome to your private page</p>
+
       <AuthConsumer>
-        {({ user }) => {
-          return (
+        {({ loginStatus, user }) => {
+          return loginStatus === true ? (
             <>
+              <h2>Hello {user.firstname}</h2>
               <Infos user={user} />
               <Admin user={user} />
             </>
+          ) : (
+            <div />
           );
         }}
       </AuthConsumer>
