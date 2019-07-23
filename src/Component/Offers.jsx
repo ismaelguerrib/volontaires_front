@@ -1,28 +1,27 @@
 import React, { Component } from 'react'
 import apiHandler from "./../ApiHandler/Handler";
-import AcceptingUser from "./AcceptingUser"
 const handler = new apiHandler(process.env.REACT_APP_BACK_URL);
 
 export default class Request extends Component {
   state = {
-    requests: []
+    offers: []
   }
   componentDidMount() {
     console.log(this.props.user.id);
 
-    handler.get("/api/requests/findbyowner/" + this.props.user.id).then(apiRes => {
+    handler.get("/api/offers/findbyowner/" + this.props.user.id).then(apiRes => {
       console.log(apiRes.data);
-      this.setState({ requests: apiRes.data });
+      this.setState({ offers: apiRes.data });
     })
       .catch(apiErr => console.error(apiErr.response));
   }
   render() {
     return (
-      this.state.requests.map(oneRequest => {
+      this.state.offers.map(oneOffer => {
         return (
           <div>
-            <h1>{oneRequest.name}</h1>
-            <AcceptingUser request={oneRequest} users={oneRequest.acceptingUser}></AcceptingUser>
+            <h1>{oneOffer.name}</h1>
+            <p>{oneOffer.acceptingUser}</p>
           </div>
         )
       })
