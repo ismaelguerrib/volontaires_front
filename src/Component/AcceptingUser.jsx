@@ -29,12 +29,12 @@ export default class AcceptingUser extends Component {
     }
   }
 
-  acceptThisUser() {
+  acceptThisUser(oneUser) {
     if (this.props.types === "request") {
       handler
         .update("/api/requests/isaccepted/" + this.props.request._id, true)
         .then(res => {
-          console.log(res);
+          this.deleteOtherUsers(oneUser)
         })
         .catch(apiErr => console.error(apiErr.response));
     } else {
@@ -42,10 +42,30 @@ export default class AcceptingUser extends Component {
         .update("/api/offers/isaccepted/" + this.props.request._id, true)
         .then(res => {
           console.log(res);
+          this.deleteOtherUsers(oneUser);
         })
         .catch(apiErr => console.error(apiErr.response));
     }
   }
+
+  deleteOtherUsers(oneUser) {
+    if (this.props.types === "request") {
+      handler
+        .update("/api/requests/removeotherusers/" + this.props.request._id, oneUser.id)
+        .then(res => {
+          console.log(res);
+        })
+        .catch(apiErr => console.error(apiErr.response));
+    } else {
+      handler
+        .update("/api/requests/removeotherusers/" + this.props.request._id, oneUser.id)
+        .then(res => {
+          console.log(res);
+        })
+        .catch(apiErr => console.error(apiErr.response));
+    }
+  }
+
   render() {
     console.log(this.props.users);
     if (!this.props.users) return <p>No user accepted it yet...</p>;
@@ -53,7 +73,8 @@ export default class AcceptingUser extends Component {
       return (
         <div>
           <p>{oneUser.firstname}</p>
-          <button onClick={this.acceptThisUser}>Accept this User</button>
+
+          <button onClick={() => this.acceptThisUser(oneUser)}>Accept this User</button>
         </div>
       );
     });
