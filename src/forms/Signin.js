@@ -33,23 +33,37 @@ export default class Signin extends Component {
     return (
       <AuthConsumer>
         {({ signin }) => (
-          <form
-            className="form"
-            onSubmit={evt => handleSubmit(evt, signin)}
-            onChange={handleChange}
-          >
-            <h1 className="title">Signin</h1>
-            <label htmlFor="email">email</label>
-            <input id="email" name="email" type="email" defaultValue={email} />
-            <label htmlFor="password">password</label>
-            <input
-              name="password"
-              id="password"
-              type="password"
-              defaultValue={password}
-            />
-            <button className="btn">ok</button>
-          </form>
+          <div className="form-container">
+            <form
+              className="form"
+              onSubmit={evt => handleSubmit(evt, signin)}
+              onChange={handleChange}
+            >
+              <h1 className="form-title">Signin</h1>
+
+              <label htmlFor="email" className="form-labels">
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                className="form-inputs"
+                type="email"
+                defaultValue={email}
+              />
+              <label htmlFor="password" className="form-labels">
+                Password
+              </label>
+              <input
+                name="password"
+                id="password"
+                type="password"
+                className="form-inputs"
+                defaultValue={password}
+              />
+              <button className="btn-submit">Log In</button>
+            </form>
+          </div>
         )}
       </AuthConsumer>
     );

@@ -98,7 +98,7 @@ export default class Signup extends Component {
         <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
           <h1 className="form-title">Signup</h1>
           <label htmlFor="firstname" className="form-labels">
-            name
+            Name
           </label>
           <input
             name="firstname"
@@ -108,7 +108,7 @@ export default class Signup extends Component {
             defaultValue={firstname}
           />
           <label htmlFor="lastname" className="form-labels">
-            lastname
+            Lastname
           </label>
           <input
             name="lastname"
@@ -118,7 +118,7 @@ export default class Signup extends Component {
             defaultValue={lastname}
           />
           <label htmlFor="email" className="form-labels">
-            email
+            E-mail
           </label>
           <input
             id="email"
@@ -137,12 +137,12 @@ export default class Signup extends Component {
             type="number"
             step="1"
             max="140"
-            min="0"
+            min="18"
             defaultValue={age}
           />
 
           <label htmlFor="password" className="form-labels">
-            password
+            Password
           </label>
           <input
             name="password"
@@ -159,12 +159,12 @@ export default class Signup extends Component {
           defaultValue={passwordConfirm}
         /> */}
           <label htmlFor="avatar" className="form-labels">
-            avatar
+            Profil Picture
           </label>
-          <i
+          {/* <i
             className="is-clickable fa fa-user-circle fa-lg"
             onClick={toggleFilePicker}
-          />
+          /> */}
           <input
             ref={this.avatarRef}
             id="avatar"
