@@ -7,25 +7,42 @@ export default class AcceptingUser extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.request.id);
-    handler.get("/api/requests/" + this.props.request.id).then(apiRes => {
-      console.log(apiRes.data);
-      this.setState({ request: apiRes.data });
-    })
-      .catch(apiErr => console.error(apiErr.response));
+    console.log(this.props);
+    if (this.props.types === "request") {
+      console.log("Finding Request");
+      handler.get("/api/requests/" + this.props.request._id).then(apiRes => {
+        console.log(apiRes.data);
+        this.setState({ request: apiRes.data });
+      })
+        .catch(apiErr => console.error(apiErr.response));
+    } else {
+      console.log("Finding Offer");
+      handler.get("/api/offers/" + this.props.request._id).then(apiRes => {
+        console.log(apiRes.data);
+        this.setState({ request: apiRes.data });
+      })
+        .catch(apiErr => console.error(apiErr.response));
+    }
   }
 
-  acceptThis() {
-    handler.update("/isaccepted/" + this.props.request.id, true).then(res => {
-      console.log(res);
-    }).catch(apiErr => console.error(apiErr.response))
+  acceptThisUser() {
+    if (this.props.types === "request") {
+      handler.update("/api/requests/isaccepted/" + this.props.request._id, true).then(res => {
+        console.log(res);
+      }).catch(apiErr => console.error(apiErr.response))
+    } else {
+      handler.update("/api/offers/isaccepted/" + this.props.request._id, true).then(res => {
+        console.log(res);
+      }).catch(apiErr => console.error(apiErr.response))
+    }
   }
   render() {
     return (
       this.props.users.map(oneUser => {
         return (
           <div>
-            <button onClick={this.acceptThis}></button>
+            <p>{oneUser.firstname}</p>
+            <button onClick={this.acceptThisUser}>Accept this User</button>
           </div>
         )
       })

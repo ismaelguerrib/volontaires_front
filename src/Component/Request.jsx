@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 import apiHandler from "./../ApiHandler/Handler";
 import AcceptingUser from "./AcceptingUser"
 const handler = new apiHandler(process.env.REACT_APP_BACK_URL);
@@ -21,8 +22,10 @@ export default class Request extends Component {
       this.state.requests.map(oneRequest => {
         return (
           <div>
-            <h1>{oneRequest.name}</h1>
-            <AcceptingUser request={oneRequest} users={oneRequest.acceptingUser}></AcceptingUser>
+            <Link to={`/cards/i-want-to-offer-help/${oneRequest._id}`} className="link">
+              <h1>{oneRequest.name}</h1>
+            </Link>
+            <AcceptingUser request={oneRequest} users={oneRequest.acceptingUser} types="request"></AcceptingUser>
           </div>
         )
       })
