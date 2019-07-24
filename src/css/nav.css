@@ -1,7 +1,7 @@
 .nav-bar {
-  position: relative;
+  position: static;
   width: 100%;
-  padding: 0.05rem;
+  padding: 0.02rem;
   border-bottom: 1px solid #f8f9fa;
   background: white;
   box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.08);
@@ -21,6 +21,7 @@
 .nav-item {
   color: #ccccd4;
   transition: color 0.2s ease-in;
+  font-size: 1.2rem;
 }
 .nav-item:hover {
   color: #0cdcb0;
