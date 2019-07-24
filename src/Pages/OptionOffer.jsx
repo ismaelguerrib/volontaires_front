@@ -4,17 +4,25 @@ import Button from "./../Component/Button";
 
 export default function OptionOffer() {
   return (
-    <div className="wrapper">
+    <div>
       <Header />
-      <div className="buttons">
-        <Button
-          content="I want to see all the requests"
-          link="/i-want-to-offer-help"
-        />
-        <Button
-          content="I want to create my offer for help"
-          link="/create-an-offer"
-        />
+      <div className="buttons-container">
+        <div className="Home-offer-infos">
+          <h2>I want to create my offer for help !</h2>
+          <Button
+            className="btn-options btn-offer"
+            content="Here"
+            link="/create-an-offer"
+          />
+        </div>
+        <div className="Home-request-infos">
+          <h2>I want to see all the requests !</h2>
+          <Button
+            className="btn-options btn-request"
+            content="View All"
+            link="/i-want-to-offer-help"
+          />
+        </div>
       </div>
     </div>
   );

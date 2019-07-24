@@ -54,13 +54,13 @@ export default class Form extends Component {
       <AuthConsumer>
         {({ user }) => (
           <div className="form-container">
-            <h1 className="form-title"> Create youre own cards</h1>
             <form
               className="form"
               id="form"
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}
             >
+              <h1 className="form-title"> Create your own card</h1>
               {user ? (
                 <input
                   type="text"
@@ -104,10 +104,9 @@ export default class Form extends Component {
                 id="location"
               />
               <label className="form-labels" htmlFor="tags">
-                Catégorie :
+                Categories :
               </label>
-              <select name="tags" form="create-one">
-                <option value="Take a walk">Choose youre category:</option>
+              <select className="form-inputs" name="tags" form="create-one">
                 <option value="Take a walk">Take a walk</option>
                 <option value="DIY">DIY</option>
                 <option value="Admiministrative">Admiministrative</option>
