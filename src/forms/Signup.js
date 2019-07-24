@@ -12,9 +12,7 @@ export default class Signup extends Component {
     email: "j@j.j",
     avatar: "",
     password: "lolo",
-    passwordConfirm: "lolo",
-    role: "Help Offerer",
-    age: 0
+    age: 18
   };
 
   constructor() {
@@ -26,14 +24,13 @@ export default class Signup extends Component {
   checkAllFields() {
     return true;
   }
-
-  checkPasswordMatch() {
-    const { password, passwordConfirm } = this.state;
-    var passed = false;
-    if (password && passwordConfirm) passed = password === passwordConfirm;
-    else passed = true;
-    return passed;
-  }
+  // checkPasswordMatch() {
+  //   const { password, passwordConfirm } = this.state;
+  //   var passed = false;
+  //   if (password && passwordConfirm) passed = password === passwordConfirm;
+  //   else passed = true;
+  //   return passed;
+  // }
 
   handleChange = evt => {
     const { name, value } = evt.target;
@@ -51,9 +48,8 @@ export default class Signup extends Component {
       lastname,
       email,
       password,
-      passwordConfirm,
+      // passwordConfirm,
       avatar,
-      role,
       age
     } = this.state;
     // simulate multipart/formdata ...
@@ -62,7 +58,6 @@ export default class Signup extends Component {
     fd.append("lastname", lastname); // req.body.lastname
     fd.append("email", email); // req.body.email
     fd.append("password", password); // req.body./password
-    fd.append("role", role); // req.body./password
     fd.append("age", age); // req.body./password
     if (file) fd.set("avatar", file, file.name);
     // above, note the difference : fd.SET !!! accessible @backend as req.file ...
@@ -95,69 +90,91 @@ export default class Signup extends Component {
       lastname,
       email,
       password,
-      passwordConfirm,
-      age,
-      role
+      // passwordConfirm,
+      age
     } = this.state;
     return (
-      <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
-        <h1 className="title">Signup</h1>
-        <label htmlFor="firstname">name</label>
-        <input
-          name="firstname"
-          id="firstname"
-          type="text"
-          defaultValue={firstname}
-        />
-        <label htmlFor="lastname">lastname</label>
-        <input
-          name="lastname"
-          id="lastname"
-          type="text"
-          defaultValue={lastname}
-        />
-        <label htmlFor="email">email</label>
-        <input id="email" name="email" type="email" defaultValue={email} />
-        <label htmlFor="age">Age</label>
-        <input
-          id="age"
-          name="age"
-          type="number"
-          step="1"
-          max="140"
-          min="0"
-          defaultValue={age}
-        />
+      <div className="form-container">
+        <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
+          <h1 className="form-title">Signup</h1>
+          <label htmlFor="firstname" className="form-labels">
+            name
+          </label>
+          <input
+            name="firstname"
+            id="firstname"
+            className="form-inputs"
+            type="text"
+            defaultValue={firstname}
+          />
+          <label htmlFor="lastname" className="form-labels">
+            lastname
+          </label>
+          <input
+            name="lastname"
+            id="lastname"
+            className="form-inputs"
+            type="text"
+            defaultValue={lastname}
+          />
+          <label htmlFor="email" className="form-labels">
+            email
+          </label>
+          <input
+            id="email"
+            name="email"
+            className="form-inputs"
+            type="email"
+            defaultValue={email}
+          />
+          <label htmlFor="age" className="form-labels">
+            Age
+          </label>
+          <input
+            id="age"
+            name="age"
+            className="form-inputs"
+            type="number"
+            step="1"
+            max="140"
+            min="0"
+            defaultValue={age}
+          />
 
-        <label htmlFor="password">password</label>
-        <input
-          name="password"
-          id="password"
-          type="password"
-          defaultValue={password}
-        />
-        <label htmlFor="passwordConfirm">confirm password (@todo)</label>
+          <label htmlFor="password" className="form-labels">
+            password
+          </label>
+          <input
+            name="password"
+            id="password"
+            className="form-inputs"
+            type="password"
+            defaultValue={password}
+          />
+          {/* <label htmlFor="passwordConfirm">confirm password (@todo)</label>
         <input
           name="passwordConfirm"
           id="passwordConfirm"
           type="password"
           defaultValue={passwordConfirm}
-        />
-        <label htmlFor="avatar">avatar</label>
-        <i
-          className="is-clickable fa fa-user-circle fa-lg"
-          onClick={toggleFilePicker}
-        />
-        <input
-          ref={this.avatarRef}
-          id="avatar"
-          name="avatar"
-          type="file"
-          className="is-hidden"
-        />
-        <hr />
-        <button className="btn">ok</button>
-      </form>
+        /> */}
+          <label htmlFor="avatar" className="form-labels">
+            avatar
+          </label>
+          <i
+            className="is-clickable fa fa-user-circle fa-lg"
+            onClick={toggleFilePicker}
+          />
+          <input
+            ref={this.avatarRef}
+            id="avatar"
+            name="avatar"
+            type="file"
+            className="is-hidden"
+          />
+          <button className="btn-submit">Submit</button>
+        </form>
+      </div>
     );
   }
 }

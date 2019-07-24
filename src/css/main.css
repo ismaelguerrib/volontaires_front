@@ -6,6 +6,7 @@
 @import "./nav.css";
 @import "./button.css";
 @import "./infos.css";
+@import "./forms.css";
 
 /* RESET CSS */
 * {
@@ -30,6 +31,7 @@ h2,
 h3 {
   margin: 0;
   padding: 0;
+  font-family: "Lobster Two", cursive;
 }
 
 ul,
