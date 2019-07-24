@@ -102,11 +102,6 @@ export default class Signup extends Component {
     return (
       <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
         <h1 className="title">Signup</h1>
-        <label htmlFor="role">Role</label>
-        <select name="role" id="">
-          <option value="Help Offerer">I want to help</option>
-          <option value="Help Requester">I wish to be helped</option>
-        </select>
         <label htmlFor="firstname">name</label>
         <input
           name="firstname"
