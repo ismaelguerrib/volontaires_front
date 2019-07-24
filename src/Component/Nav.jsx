@@ -32,12 +32,12 @@ function NavMain() {
             {({ loginStatus, signout, user }) =>
               loginStatus === true ? (
                 <React.Fragment>
-                  <NavLink
+                  {/* <NavLink
                     activeClassName="is-active"
                     className="icon auth fa fa-user-circle fa-lg"
                     to="/dashboard"
-                  />
-                  <SignoutIcon signout={signout} />
+                  /> */}
+
                   <NavLink
                     activeClassName="is-active"
                     className="nav-item"
@@ -45,6 +45,7 @@ function NavMain() {
                   >
                     Dashboard
                   </NavLink>
+                  <SignoutIcon signout={signout} />
                 </React.Fragment>
               ) : (
                 <React.Fragment>
