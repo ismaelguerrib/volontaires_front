@@ -11,7 +11,7 @@ export default function OptionOffer() {
           <h2>I want to create my offer for help !</h2>
           <Button
             className="btn-options btn-offer"
-            content="Here"
+            content="Create my offer"
             link="/create-an-offer"
           />
         </div>
@@ -19,7 +19,7 @@ export default function OptionOffer() {
           <h2>I want to see all the requests !</h2>
           <Button
             className="btn-options btn-request"
-            content="View All"
+            content="Find someone to help"
             link="/i-want-to-offer-help"
           />
         </div>
