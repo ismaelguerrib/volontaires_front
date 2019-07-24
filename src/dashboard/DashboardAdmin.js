@@ -5,6 +5,7 @@ export default function DashboardAdmin({ user }) {
   return (
     <>
       <Request user={user} />
+      <h2>{user.role}</h2>
     </>
   );
 }
