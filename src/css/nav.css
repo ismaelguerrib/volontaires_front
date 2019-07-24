@@ -24,12 +24,12 @@
   font-size: 1.2rem;
 }
 .nav-item:hover {
-  color: #0cdcb0;
+  color: #fd5c63;
 }
 
 @media only screen and (max-width: 600px) {
   .nav-item {
-    font-size: 60%;
+    font-size: 65%;
   }
 }
 

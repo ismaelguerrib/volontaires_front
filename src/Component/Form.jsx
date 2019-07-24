@@ -53,47 +53,79 @@ export default class Form extends Component {
     return (
       <AuthConsumer>
         {({ user }) => (
-          <div className="big-container-form">
-            <h1> Create youre own cards</h1>
-            <div className="form-container">
-              <form
-                id="form"
-                onChange={this.handleChange}
-                onSubmit={this.handleSubmit}
-              >
-                {user ? (
-                  <input
-                    type="text"
-                    defaultValue={user.id}
-                    name="userId"
-                    ref={this.myRef}
-                    style={{ display: "none" }}
-                  />
-                ) : (
-                  <h1>nope</h1>
-                )}
+          <div className="form-container">
+            <h1 className="form-title"> Create youre own cards</h1>
+            <form
+              className="form"
+              id="form"
+              onChange={this.handleChange}
+              onSubmit={this.handleSubmit}
+            >
+              {user ? (
+                <input
+                  type="text"
+                  className="form-inputs"
+                  defaultValue={user.id}
+                  name="userId"
+                  ref={this.myRef}
+                  style={{ display: "none" }}
+                />
+              ) : (
+                <h1>nope</h1>
+              )}
 
-                <label htmlFor="name"> Title : </label>
-                <input type="string" name="name" id="name" />
-                <label htmlFor="description"> Description :</label>
-                <input type="string" name="description" id="description" />
-                <label htmlFor="location">Location: </label>
-                <input type="string" name="location" id="location" />
-                <label htmlFor="tags">Catégorie :</label>
-                <select name="tags" form="create-one">
-                  <option value="Take a walk">Choose youre category:</option>
-                  <option value="Take a walk">Take a walk</option>
-                  <option value="DIY">DIY</option>
-                  <option value="Admiministrative">Admiministrative</option>
-                  <option value="Learn">Learn</option>
-                  <option value="Nursering">Nursering</option>
-                  <option value="Other">Other</option>
-                </select>
-                <label htmlFor="time">Date :</label>
-                <input type="date" name="time" id="date" />
-                <button> Submit </button>
-              </form>
-            </div>
+              <label className="form-labels" htmlFor="name">
+                {" "}
+                Title :{" "}
+              </label>
+              <input
+                className="form-inputs"
+                type="string"
+                name="name"
+                id="name"
+              />
+              <label className="form-labels" htmlFor="description">
+                {" "}
+                Description :
+              </label>
+              <input
+                className="form-inputs"
+                type="string"
+                name="description"
+                id="description"
+              />
+              <label className="form-labels" htmlFor="location">
+                Location:{" "}
+              </label>
+              <input
+                className="form-inputs"
+                type="string"
+                name="location"
+                id="location"
+              />
+              <label className="form-labels" htmlFor="tags">
+                Catégorie :
+              </label>
+              <select name="tags" form="create-one">
+                <option value="Take a walk">Choose youre category:</option>
+                <option value="Take a walk">Take a walk</option>
+                <option value="DIY">DIY</option>
+                <option value="Admiministrative">Admiministrative</option>
+                <option value="Learn">Learn</option>
+                <option value="Nursering">Nursering</option>
+                <option value="Other">Other</option>
+              </select>
+              <label className="form-labels" htmlFor="time">
+                Date :
+              </label>
+              <input
+                className="form-inputs"
+                type="date"
+                name="time"
+                id="date"
+              />
+              <button className="btn-submit"> Submit </button>
+            </form>
           </div>
         )}
       </AuthConsumer>

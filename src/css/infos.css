@@ -1,23 +1,37 @@
 .Home-request-infos {
-  background-color: #0cdcb0;
+  background-color: #fd5c63;
   color: white;
+  width: 100%;
+  height: calc((100vh - 96px) / 2);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 .Home-request-infos h2 {
   margin: 1rem;
-  font-family: "Lobster Two", cursive;
-  text-align: right;
+  font-family: "Source Sans Pro", cursive;
+  font-weight: 300;
+  text-align: center;
+  font-size: 2.3rem;
 }
 
-.buttons-container img {
+/* .buttons-container img {
   width: 110%;
-}
+} */
 
 .Home-offer-infos {
-  color: #0cdcb0;
+  color: #fd5c63;
   background-color: white;
+  height: calc((100vh - 96px) / 2);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .Home-offer-infos h2 {
   margin: 1rem;
-  font-family: "Lobster Two", cursive;
+  font-family: "Source Sans Pro", cursive;
+  font-weight: 300;
+  text-align: center;
+  font-size: 2.3rem;
 }

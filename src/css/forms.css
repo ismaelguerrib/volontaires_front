@@ -3,7 +3,7 @@
   align-items: center;
   height: 100vh;
   justify-content: center;
-  background-color: #0cdcb0;
+  background-color: #fd5c63;
 }
 .form {
   display: flex;
@@ -27,9 +27,9 @@
 
 .btn-submit {
   cursor: pointer;
-  border: 1px solid #0cdcb0;
+  border: 1px solid #fd5c63;
   background: white;
-  color: #0cdcb0;
+  color: #fd5c63;
   padding: 0.5rem 1rem;
   border-radius: 9rem;
   font-size: 1rem;
@@ -39,9 +39,9 @@
 }
 
 .btn-submit:hover {
-  border: 1px solid #077b63;
+  border: 1px solid #c7474e;
   background-color: white;
-  color: #077b63;
+  color: #c7474e;
 }
 
 .form-inputs {

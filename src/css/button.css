@@ -1,7 +1,7 @@
 .btn-nav {
   display: flex;
   align-items: center;
-  color: #0cdcb0;
+  color: #fd5c63;
   cursor: pointer;
   border: none;
   font-size: 0.8rem;
@@ -15,7 +15,7 @@
 }
 
 .btn-nav:hover {
-  color: #077b63;
+  color: #fd5c63;
 }
 
 .buttons-container {
@@ -27,12 +27,12 @@
 
 .btn-options {
   cursor: pointer;
-  border: 1px solid #0cdcb0;
+  border: 1px solid #fd5c63;
   background: white;
-  color: #0cdcb0;
+  color: #fd5c63;
   padding: 0.5rem 1rem;
   border-radius: 9rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   transition: all 0.2s ease-in;
   transition-property: color, border;
   margin: 1rem;
@@ -43,15 +43,15 @@
 }
 .btn-request:hover {
   border: 1px solid white;
-  background-color: #077b63;
+  background-color: #fd5c63;
   color: white;
 }
 .btn-offer {
-  background-color: #077b63;
+  background-color: #fd5c63;
   color: white;
 }
 .btn-offer:hover {
-  border: 1px solid #077b63;
+  border: 1px solid #fd5c63;
   background-color: white;
-  color: #077b63;
+  color: #fd5c63;
 }
