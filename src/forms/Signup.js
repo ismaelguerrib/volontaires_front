@@ -7,12 +7,12 @@ const apiHandler = new APIHandler();
 export default class Signup extends Component {
   state = {
     isPasswordOk: false,
-    firstname: "foo",
-    lastname: "bar",
-    email: "foo@bar.baz",
+    firstname: "J",
+    lastname: "j",
+    email: "j@j.j",
     avatar: "",
-    password: "1234",
-    passwordConfirm: "1234",
+    password: "lolo",
+    passwordConfirm: "lolo",
     role: "Help Offerer",
     age: 0
   };
@@ -78,7 +78,9 @@ export default class Signup extends Component {
         this.props.history.push("/");
         if (serverRes.response) console.log(serverRes.response);
       })
-      .catch(serverErr => console.error(serverErr));
+      .catch(serverErr => {
+        console.error(serverErr.response);
+      });
   };
 
   toggleFilePicker = evt => {
