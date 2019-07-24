@@ -10,7 +10,7 @@ export default class AcceptingUser extends Component {
     console.log(this.props.request.id);
     handler.get("/api/requests/" + this.props.request.id).then(apiRes => {
       console.log(apiRes.data);
-      this.setState({ requests: apiRes.data });
+      this.setState({ request: apiRes.data });
     })
       .catch(apiErr => console.error(apiErr.response));
   }
