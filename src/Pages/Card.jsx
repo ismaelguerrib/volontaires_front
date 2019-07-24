@@ -5,16 +5,14 @@ import OneCard from "./OneCard";
 
 export default function Card({ cont, route }) {
   return (
-    <div>
-      <div className="viewall-container">
-        {cont.map((card, i) => (
-          <div className="viewall-card" key={i}>
-            <Link to={`/cards${route}/${card._id}`} className="link">
-              <OneCard card={card} />
-            </Link>
-          </div>
-        ))}
-      </div>
+    <div className="viewall-container">
+      {cont.map((card, i) => (
+        <div className="viewall-card" key={i}>
+          <Link to={`/cards${route}/${card._id}`} className="link">
+            <OneCard card={card} />
+          </Link>
+        </div>
+      ))}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Axios from "axios";
-
+import Header from "../Component/Header";
 import Card from "./Card";
 export default class ViewAll extends Component {
   state = {
@@ -39,6 +39,7 @@ export default class ViewAll extends Component {
   render() {
     return (
       <div>
+        <Header />
         <Card cont={this.state.cards} route={this.props.match.path} />
       </div>
     );
