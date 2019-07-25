@@ -54,13 +54,7 @@ function NavMain() {
                     className="nav-item-link"
                     to="/signin"
                   >
-                    <button className="btn-nav">
-                      Sign In
-                      <FontAwesomeIcon
-                        icon="angle-right"
-                        className="arrow-btn"
-                      />
-                    </button>
+                    <button className="btn-nav">Sign In</button>
                   </NavLink>
 
                   <NavLink
