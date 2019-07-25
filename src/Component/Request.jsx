@@ -22,14 +22,15 @@ export default class Request extends Component {
   render() {
     return this.state.requests.map(oneRequest => {
       return (
-        <div>
+        <div className="dashboard-request-container">
           <Link
             to={`/cards/i-want-to-offer-help/${oneRequest._id}`}
             className="link"
           >
-            <h1>{oneRequest.name}</h1>
-            <p>{oneRequest.userAccepting}</p>
-            <p>{oneRequest.location}</p>
+            <h1 className="card-details card-details-title">
+              {oneRequest.name}
+            </h1>
+            <p className="card-details">{oneRequest.userAccepting}</p>
           </Link>
           <AcceptingUser
             request={oneRequest}

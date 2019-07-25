@@ -7,10 +7,26 @@ import WhatyouSaidYesTo from "./../Pages/WhatyouSaidYesTo";
 export default function DashboardAdmin({ user }) {
   return (
     <>
-      <Request user={user} />
-      <Offer user={user} />
-      <AcceptedTasks user={user} />
-      <WhatyouSaidYesTo user={user} />
+      <div className="requests-big-container">
+        <h2 className="dashboard-title"> Your requests :</h2>
+        <div className="dashboard-request-big-container">
+          <Request user={user} />
+        </div>
+      </div>
+      <div className="requests-big-container">
+        <h2 className="dashboard-title"> Your offers :</h2>
+        <div className="dashboard-request-big-container">
+          <Offer user={user} />
+        </div>
+      </div>
+      <div className="accept-tasks-big-container">
+        <h2 className="dashboard-title"> Notifications :</h2>
+        <AcceptedTasks user={user} />
+      </div>
+      <div className="accepted-tasks-big-container">
+        <h2 className="dashboard-title"> Your next Volunteers missions :</h2>
+        <WhatyouSaidYesTo user={user} />
+      </div>
     </>
   );
 }
