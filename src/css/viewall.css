@@ -10,16 +10,8 @@
   width: 25%;
   color: white;
   background-color: #fd5c63;
-}
-
-@media only screen and (max-width: 600px) {
-  .viewall-card {
-    margin: 0.5rem;
-    width: 45%;
-  }
-  .card-details {
-    font-size: 14px;
-  }
+  padding: 1rem;
+  border-radius: 3px;
 }
 
 .card-image {
@@ -31,4 +23,22 @@
 .card-details {
   justify-content: center;
   display: flex;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+.card-details-title {
+  font-weight: 300;
+}
+@media only screen and (max-width: 600px) {
+  .viewall-card {
+    margin: 0.5rem;
+    width: 40%;
+  }
+  .card-details {
+    font-size: 0.8rem;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.2rem;
+  }
 }

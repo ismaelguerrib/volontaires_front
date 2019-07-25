@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import apiHandler from "./../ApiHandler/Handler";
+import "font-awesome/css/font-awesome.min.css";
 const handler = new apiHandler(process.env.REACT_APP_BACK_URL);
 
 export default class OneCard extends Component {
@@ -30,9 +31,13 @@ export default class OneCard extends Component {
           alt="userImage"
         />
         {/* <h2>{this.state.user.avatar}</h2> */}
-        <h4 className="card-details">{this.state.card.name}</h4>
+        <h4 className="card-details card-details-title">
+          {this.state.card.name}
+        </h4>
         <p className="card-details">{this.state.card.tags}</p>
-        <p className="card-details">{this.state.card.location}</p>
+        <div className="card-details">
+          <i class="fas fa-map-marker-alt" /> {this.state.card.location}
+        </div>
         <p className="card-details">{this.state.card.time}</p>
       </div>
     );
