@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import DisplayUser from "./DisplayUser"
 import apiHandler from "./../ApiHandler/Handler";
 const handler = new apiHandler(process.env.REACT_APP_BACK_URL);
 export default class AcceptingUser extends Component {
@@ -72,10 +73,9 @@ export default class AcceptingUser extends Component {
     return this.props.users.map(oneUser => {
       return (
         <div>
-          <p>{oneUser.firstname}</p>
-
+          <DisplayUser user={oneUser}></DisplayUser>
           <button onClick={() => this.acceptThisUser(oneUser)}>Accept this User</button>
-        </div>
+        </div >
       );
     });
   }
