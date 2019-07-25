@@ -3,8 +3,8 @@ import APIHandler from "../ApiHandler/Handler";
 import { AuthConsumer } from "../auth/Guard";
 import PickyDateTime from "react-picky-date-time";
 
-const apiHandler = new APIHandler();
-
+// const apiHandler = new APIHandler();
+const apiHandler = new APIHandler(process.env.REACT_APP_BACK_URL);
 export default class Form extends Component {
   constructor(props) {
     super(props);
@@ -133,14 +133,14 @@ export default class Form extends Component {
 
   render() {
     const {
-      showPickyDateTime,
-      date,
-      month,
-      year,
-      hour,
-      minute,
-      second,
-      meridiem
+      showPickyDateTime
+      // date,
+      // month,
+      // year,
+      // hour,
+      // minute,
+      // second,
+      // meridiem
     } = this.state;
     return (
       <AuthConsumer>

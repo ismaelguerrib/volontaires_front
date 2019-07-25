@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
-
+import ApiHandler from "./ApiHandler/Handler";
 import Message from "./Message.js";
 
+const handler = new ApiHandler(process.env.REACT_APP_BACK_URL);
 class Chatroom extends React.Component {
   constructor(props) {
     super(props);
@@ -23,6 +24,7 @@ class Chatroom extends React.Component {
 
   componentDidMount() {
     this.scrollToBot();
+    console.log(typeof this.state.chats[0].content);
   }
 
   componentDidUpdate() {
@@ -42,9 +44,9 @@ class Chatroom extends React.Component {
       {
         chats: this.state.chats.concat([
           {
-            username: "Kevin Hsu",
+            username: this.props.user.firstname,
             content: <p>{ReactDOM.findDOMNode(this.refs.msg).value}</p>,
-            img: "http://i.imgur.com/Tj5DGiO.jpg"
+            img: this.props.user.avatar
           }
         ])
       },
