@@ -62,13 +62,7 @@ function NavMain() {
                     className="nav-item-link"
                     to="/signup"
                   >
-                    <button className="btn-nav">
-                      Sign up
-                      <FontAwesomeIcon
-                        icon="angle-right"
-                        className="arrow-btn"
-                      />
-                    </button>
+                    <button className="btn-nav">Sign up</button>
                   </NavLink>
                 </React.Fragment>
               )

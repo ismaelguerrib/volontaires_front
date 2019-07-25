@@ -29,6 +29,14 @@
 .card-details-title {
   font-weight: 300;
 }
+.fa-map-marker {
+  margin: 0.5rem;
+}
+
+.card-details-location {
+  display: flex;
+  justify-content: center;
+}
 @media only screen and (max-width: 600px) {
   .viewall-card {
     margin: 0.5rem;

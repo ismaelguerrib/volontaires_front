@@ -34,11 +34,11 @@ export default class OneCard extends Component {
         <h4 className="card-details card-details-title">
           {this.state.card.name}
         </h4>
-        <p className="card-details">{this.state.card.tags}</p>
-        <div className="card-details">
+        <div className="card-details card-details-location">
           <LocationIcone /> {this.state.card.location}
         </div>
         <p className="card-details">{this.state.card.time}</p>
+        <p className="card-details card-details-tag">{this.state.card.tags}</p>
       </div>
     );
   }

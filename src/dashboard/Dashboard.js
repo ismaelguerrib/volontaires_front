@@ -5,16 +5,18 @@ import Admin from "./DashboardAdmin";
 
 export default function Dashboard() {
   return (
-    <div>
-      <h1 className="title">Dashboard</h1>
+    <div className="dashboard-container">
+      <h1 className="dashboard-title">Dashboard</h1>
 
       <AuthConsumer>
         {({ loginStatus, user }) => {
           return loginStatus === true ? (
             <>
-              <h2>Hello {user.firstname}</h2>
-              <Infos user={user} />
-              <Admin user={user} />
+              <div className="dashboard-infos-container">
+                <h2 className="dasboard-hello">Hello {user.name}</h2>
+                <Infos user={user} />
+                <Admin user={user} />
+              </div>
             </>
           ) : (
             <div />
