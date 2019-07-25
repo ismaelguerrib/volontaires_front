@@ -9,20 +9,20 @@ export default class AcceptingUser extends Component {
   componentDidMount() {
     console.log(this.props);
     if (this.props.types === "request") {
-      console.log("Finding Request");
+      // console.log("Finding Request");
       handler
         .get("/api/requests/" + this.props.request._id)
         .then(apiRes => {
-          console.log(apiRes.data);
+          // console.log(apiRes.data);
           this.setState({ request: apiRes.data });
         })
         .catch(apiErr => console.error(apiErr.response));
     } else {
-      console.log("Finding Offer");
+      // console.log("Finding Offer");
       handler
         .get("/api/offers/" + this.props.request._id)
         .then(apiRes => {
-          console.log(apiRes.data);
+          // console.log(apiRes.data);
           this.setState({ request: apiRes.data });
         })
         .catch(apiErr => console.error(apiErr.response));
@@ -34,14 +34,14 @@ export default class AcceptingUser extends Component {
       handler
         .update("/api/requests/isaccepted/" + this.props.request._id, true)
         .then(res => {
-          this.deleteOtherUsers(oneUser)
+          this.deleteOtherUsers(oneUser);
         })
         .catch(apiErr => console.error(apiErr.response));
     } else {
       handler
         .update("/api/offers/isaccepted/" + this.props.request._id, true)
         .then(res => {
-          console.log(res);
+          // console.log(res);
           this.deleteOtherUsers(oneUser);
         })
         .catch(apiErr => console.error(apiErr.response));
@@ -51,30 +51,39 @@ export default class AcceptingUser extends Component {
   deleteOtherUsers(oneUser) {
     if (this.props.types === "request") {
       handler
-        .update("/api/requests/removeotherusers/" + this.props.request._id, oneUser.id)
+        .update(
+          "/api/requests/removeotherusers/" + this.props.request._id,
+          oneUser.id
+        )
         .then(res => {
-          console.log(res);
+          // console.log(res);
         })
         .catch(apiErr => console.error(apiErr.response));
     } else {
       handler
-        .update("/api/requests/removeotherusers/" + this.props.request._id, oneUser.id)
+        .update(
+          "/api/requests/removeotherusers/" + this.props.request._id,
+          oneUser.id
+        )
         .then(res => {
-          console.log(res);
+          // console.log(res);
         })
         .catch(apiErr => console.error(apiErr.response));
     }
   }
 
   render() {
-    console.log(this.props.users);
-    if (!this.props.users) return <p>No user accepted it yet...</p>;
-    return this.props.users.map(oneUser => {
+    console.log(this.props.request.userAccepting);
+    if (!this.props.request.userAccepting)
+      return <p>No user accepted it yet...</p>;
+    return this.props.request.userAccepting.map(oneUser => {
       return (
         <div>
           <p>{oneUser.firstname}</p>
 
-          <button onClick={() => this.acceptThisUser(oneUser)}>Accept this User</button>
+          <button onClick={() => this.acceptThisUser(oneUser)}>
+            Accept this User
+          </button>
         </div>
       );
     });
