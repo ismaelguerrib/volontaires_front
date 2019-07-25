@@ -24,6 +24,8 @@ export default class Request extends Component {
           <div>
             <Link to={`/cards/i-want-to-offer-help/${oneRequest._id}`} className="link">
               <h1>{oneRequest.name}</h1>
+              <p>{oneRequest.acceptingUser}</p>
+              <p>{oneRequest.location}</p>
             </Link>
             <AcceptingUser request={oneRequest} users={oneRequest.acceptingUser} types="request"></AcceptingUser>
           </div>

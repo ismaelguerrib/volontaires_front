@@ -2,10 +2,14 @@ import React from 'react'
 import { log } from 'util';
 
 export default function OneTask({ task }) {
-  console.log(task);
-  return (
-    <div><h1>{task.name}</h1>
-      <h3>{task.isAccepted}</h3>
-    </div>
-  )
+  // console.log(task);
+  if (task.isAccepted) return (
+    <div><h5>{task.name}</h5>
+      <p>Your were accepted for this task</p>
+    </div>)
+  else return (
+    <div><h5>{task.name}</h5>
+      <p>No answer yet...</p>
+    </div>)
 }
+
