@@ -71,7 +71,7 @@ export default class Signup extends Component {
         // everything is fine, redirect to dashboard
         console.log(this.props);
         this.props.history.push("/");
-        if (serverRes.response) console.log(serverRes.response);
+        console.log(serverRes);
       })
       .catch(serverErr => {
         console.error(serverErr.response);
