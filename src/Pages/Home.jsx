@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./../Component/Header";
 import Button from "./../Component/Button";
+import Chatroom from "./../Chatroom";
 // import VolunteersActive from "../images/blue-charity-cheerful-1260293.jpg";
 export default class Home extends Component {
   render() {

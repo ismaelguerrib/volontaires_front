@@ -1,5 +1,4 @@
 import React from 'react'
-import { log } from 'util';
 
 export default function OneTask({ task }) {
   // console.log(task);
