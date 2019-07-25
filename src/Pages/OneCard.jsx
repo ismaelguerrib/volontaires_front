@@ -37,7 +37,7 @@ export default class OneCard extends Component {
         <div className="card-details card-details-location">
           <LocationIcone /> {this.state.card.location}
         </div>
-        <p className="card-details">{this.state.card.time}</p>
+        {/* <p className="card-details">{this.state.card.time}</p> */}
         <p className="card-details card-details-tag">{this.state.card.tags}</p>
       </div>
     );
