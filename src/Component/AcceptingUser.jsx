@@ -83,7 +83,17 @@ export default class AcceptingUser extends Component {
     console.log(this.props.request.userAccepting);
     if (!this.props.request.userAccepting)
       return <p>No user accepted it yet...</p>;
-    return this.props.request.userAccepting.map(oneUser => {
+    else if (this.props.types === "request") return this.props.request.acceptingUser.map(oneUser => {
+      return (
+        <div className="card-details">
+          <DisplayUser user={oneUser} />
+          <button onClick={() => this.acceptThisUser(oneUser)}>
+            Accept this User
+          </button>
+        </div>
+      );
+    });
+    else return this.props.request.userAccepting.map(oneUser => {
       return (
         <div className="card-details">
           <DisplayUser user={oneUser} />

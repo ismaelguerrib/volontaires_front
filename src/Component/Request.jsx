@@ -30,7 +30,7 @@ export default class Request extends Component {
             <h1 className="card-details card-details-title">
               {oneRequest.name}
             </h1>
-            <p className="card-details">{oneRequest.acceptingUser}</p>
+            <p className="card-details">{oneRequest.userAccepting}</p>
           </Link>
           <AcceptingUser
             request={oneRequest}
