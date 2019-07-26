@@ -79,7 +79,7 @@ export default class AcceptingUser extends Component {
       return <p>No user accepted it yet...</p>;
     return this.props.request.userAccepting.map(oneUser => {
       return (
-        <div>
+        <div className="card-details">
           <DisplayUser user={oneUser} />
           <button onClick={() => this.acceptThisUser(oneUser)}>
             Accept this User

@@ -28,7 +28,7 @@ export default class Request extends Component {
             to={`/cards/i-want-to-be-helped/${oneOffer._id}`}
             className="link"
           >
-            <h1>{oneOffer.name}</h1>
+            <h1 className="card-details card-details-title">{oneOffer.name}</h1>
           </Link>
           <AcceptingUser
             request={oneOffer}

@@ -1,8 +1,6 @@
 .dashboard-container {
   display: flex;
   width: 100%;
-  color: white;
-  background-color: #fd5c63;
 }
 .dashboard-infos-container {
   display: flex;
@@ -15,6 +13,8 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+  color: white;
+  background-color: #fd5c63;
 }
 .dashboard-user-picture {
   border-radius: 50%;
@@ -23,21 +23,21 @@
 }
 
 .dashboard-title {
-  align-content: center;
   margin: 1rem;
+  color: #fd5c63;
 }
 .dashboard-request-container {
   width: 45%;
-  background-color: white;
-  color: #fd5c63;
+  color: white;
+  background-color: #fd5c63;
   padding: 1rem;
   border-radius: 3px;
   margin: 1rem;
 }
 .dashboard-offer-container {
   width: 45%;
-  background-color: white;
-  color: #fd5c63;
+  color: white;
+  background-color: #fd5c63;
   padding: 1rem;
   border-radius: 3px;
   margin: 1rem;
@@ -53,20 +53,21 @@
   flex-direction: column;
 }
 .accept-tasks-big-container {
-  display: flex;
-  flex-direction: row;
-  background-color: white;
-  align-items: baseline;
-  color: #fd5c63;
-  justify-content: center;
+  width: 45%;
+  color: white;
+  background-color: #fd5c63;
+  padding: 1rem;
+  border-radius: 3px;
+  margin: 1rem;
 }
 
-.accepted-tasks-big-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
 .accepted-tasks-container {
+  width: 45%;
+  color: white;
+  background-color: #fd5c63;
+  padding: 1rem;
+  border-radius: 3px;
+  margin: 1rem;
 }
 .accepted-tasks-details {
   margin: 0.45rem;

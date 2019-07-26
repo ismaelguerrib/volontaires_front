@@ -36,6 +36,7 @@
 .card-details-location {
   display: flex;
   justify-content: center;
+  align-items: baseline;
 }
 @media only screen and (max-width: 600px) {
   .viewall-card {
