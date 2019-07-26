@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Axios from "axios";
 import Header from "../Component/Header";
 import Card from "./Card";
-import { withRouter } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
 
 
 export default class ViewAll extends Component {
