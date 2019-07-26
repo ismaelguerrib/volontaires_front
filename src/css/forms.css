@@ -5,6 +5,13 @@
   justify-content: center;
   background-color: #fd5c63;
 }
+.signup-form-container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  background-color: #fd5c63;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -14,7 +21,7 @@
 
 .form-title {
   color: white;
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
 .form-labels {
   margin: 1rem;
@@ -55,6 +62,6 @@
 
 .picky-date-time.visible {
   background-color: white;
-  margin: 2rem;
-  width: 45%;
+  margin: 2.5rem;
+  width: 100%;
 }

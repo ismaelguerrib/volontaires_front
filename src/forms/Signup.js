@@ -94,7 +94,7 @@ export default class Signup extends Component {
       age
     } = this.state;
     return (
-      <div className="form-container">
+      <div className="signup-form-container">
         <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
           <h1 className="form-title">Signup</h1>
           <label htmlFor="firstname" className="form-labels">

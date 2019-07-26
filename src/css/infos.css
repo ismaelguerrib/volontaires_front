@@ -21,7 +21,6 @@
 
 .Home-offer-infos {
   color: #fd5c63;
-  background-color: white;
   height: calc((100vh - 64px) / 2);
   justify-content: center;
   display: flex;
