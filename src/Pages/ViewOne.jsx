@@ -4,6 +4,7 @@ import DeleteButton from "./../Component/DeleteButton";
 import UpdateButton from "../Component/UpdateButton";
 import { AuthConsumer } from "./../auth/Guard";
 import AcceptButton from "./../Component/AcceptButton";
+import Header from "../Component/Header";
 
 // import UpdateButton from "";
 const handler = new apiHandler(process.env.REACT_APP_BACK_URL);
@@ -48,55 +49,62 @@ export default class ViewOne extends Component {
 
   render() {
     return (
-      <div className="view-one-container">
-        <AuthConsumer>
-          {({ loginStatus, user }) => {
-            return loginStatus && user.id === this.state.singleRO.userId ? (
-              <div>
-                <div className="view-one-user-infos">
-                  <h1>{this.state.singleRO.name}</h1>
-                  <img
-                    className="viewone-user-image"
-                    src={user.avatar}
-                    alt="your cool pic"
+      <>
+        <Header />
+        <div className="view-one-container">
+          <AuthConsumer>
+            {({ loginStatus, user }) => {
+              return loginStatus &&
+                user &&
+                user.id === this.state.singleRO.userId ? (
+                <>
+                  <div className="view-one-user-infos">
+                    <img
+                      className="viewone-user-image"
+                      src={user.avatar}
+                      alt="your cool pic"
+                    />
+                    <h2>{user.firstname}</h2>
+                    <h2>{user.lastname}</h2>
+                  </div>
+                  <div className="viewone-infos-container">
+                    <h1>{this.state.singleRO.name}</h1>
+                    <p> {this.state.singleRO.description}</p>
+                    <p> {this.state.singleRO.location}</p>
+                    <p>
+                      {this.state.singleRO.date}/{this.state.singleRO.month} @
+                      {this.state.singleRO.hour}:{this.state.singleRO.minute}
+                      {this.state.singleRO.meridiem}
+                    </p>
+                  </div>
+                  <div className="viewone-btn-container">
+                    <DeleteButton
+                      history={this.props.history}
+                      id={this.props.match.params.cards_id}
+                    />
+                    <UpdateButton
+                      history={this.props.history}
+                      id={this.props.match.params.cards_id}
+                    />
+                  </div>
+                </>
+              ) : loginStatus ? (
+                <div>
+                  <AcceptButton
+                    history={this.props.history}
+                    id={this.props.match.params.cards_id}
+                    currentUser={user.id}
                   />
-                  <h2>{user.firstname}</h2>
-                  <h2>{user.lastname}</h2>
                 </div>
-                <div className="viewone-infos-container">
-                  <p> {this.state.singleRO.description}</p>
-                  <p> {this.state.singleRO.location}</p>
-                  <p>
-                    {this.state.singleRO.date}/{this.state.singleRO.month} @
-                    {this.state.singleRO.hour}:{this.state.singleRO.minute}
-                    {this.state.singleRO.meridiem}
-                  </p>
+              ) : (
+                <div>
+                  <h1>Sorry, you need to be connected</h1>
                 </div>
-                <DeleteButton
-                  history={this.props.history}
-                  id={this.props.match.params.cards_id}
-                />
-                <UpdateButton
-                  history={this.props.history}
-                  id={this.props.match.params.cards_id}
-                />
-              </div>
-            ) : loginStatus ? (
-              <div>
-                <AcceptButton
-                  history={this.props.history}
-                  id={this.props.match.params.cards_id}
-                  currentUser={user.id}
-                />
-              </div>
-            ) : (
-              <div>
-                <h1>Sorry, you need to be connected</h1>
-              </div>
-            );
-          }}
-        </AuthConsumer>
-      </div>
+              );
+            }}
+          </AuthConsumer>
+        </div>
+      </>
     );
   }
 }

@@ -127,7 +127,14 @@ export default class Form extends Component {
     if (this.props.match.path === "/create-an-offer") {
       apiHandler.post("/api/offers", data);
     } else {
-      apiHandler.post("/api/requests", data);
+      apiHandler
+        .post("/api/requests", data)
+        .then(dbRes => {
+          console.log(dbRes);
+        })
+        .catch(dbErr => {
+          console.log(dbErr.response);
+        });
     }
   };
 
@@ -199,6 +206,9 @@ export default class Form extends Component {
                 Categories :
               </label>
               <select className="form-inputs" name="tags" form="create-one">
+                <option disabled selected>
+                  --- Choose one option ---
+                </option>
                 <option value="Take a walk">Take a walk</option>
                 <option value="DIY">DIY</option>
                 <option value="Admiministrative">Admiministrative</option>

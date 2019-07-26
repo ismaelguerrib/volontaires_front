@@ -1,6 +1,6 @@
-import React from 'react'
-import apiHandler from "./../ApiHandler/Handler"
-const handler = new apiHandler(process.env.REACT_APP_BACK_URL)
+import React from "react";
+import apiHandler from "./../ApiHandler/Handler";
+const handler = new apiHandler(process.env.REACT_APP_BACK_URL);
 
 export default function AcceptButton({ id, history, currentUser }) {
   console.log("current user", currentUser);
@@ -10,23 +10,28 @@ export default function AcceptButton({ id, history, currentUser }) {
   const acceptTask = () => {
     if (history.location.pathname[17] === "b") {
       console.log(id);
-      handler.update("/api/offers/accept/" + id, { userAccepting: currentUser })
+      handler
+        .update("/api/offers/accept/" + id, { userAccepting: currentUser })
         .then(apiRes => {
           console.log(apiRes.data);
-          history.push("/")
+          history.push("/");
         })
         .catch(apiErr => console.error(apiErr));
-    } else handler.update("/api/requests/accept/" + id, { userAccepting: currentUser })
-      .then(apiRes => {
-        console.log(apiRes.data);
-        history.push("/")
-      })
-      .catch(apiErr => console.error(apiErr));
-  }
+    } else
+      handler
+        .update("/api/requests/accept/" + id, { userAccepting: currentUser })
+        .then(apiRes => {
+          console.log(apiRes.data);
+          history.push("/");
+        })
+        .catch(apiErr => console.error(apiErr));
+  };
 
   return (
     <div>
-      <button onClick={acceptTask}>Accept</button>
+      <button className="btn-submit" onClick={acceptTask}>
+        Accept
+      </button>
     </div>
-  )
+  );
 }
