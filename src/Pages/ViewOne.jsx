@@ -5,6 +5,7 @@ import UpdateButton from "../Component/UpdateButton";
 import { AuthConsumer } from "./../auth/Guard";
 import AcceptButton from "./../Component/AcceptButton";
 import Header from "../Component/Header";
+import LocationIcone from "../Component/LocationIcone";
 
 // import UpdateButton from "";
 const handler = new apiHandler(process.env.REACT_APP_BACK_URL);
@@ -68,10 +69,17 @@ export default class ViewOne extends Component {
                     <h2>{user.lastname}</h2>
                   </div>
                   <div className="viewone-infos-container">
-                    <h1>{this.state.singleRO.name}</h1>
-                    <p> {this.state.singleRO.description}</p>
-                    <p> {this.state.singleRO.location}</p>
-                    <p>
+                    <h1 className="viewone-infos-details-title">
+                      {this.state.singleRO.name}
+                    </h1>
+                    <p className="viewone-infos-details">
+                      {this.state.singleRO.description}
+                    </p>
+                    <div className="viewone-infos-details infos-details-location">
+                      <LocationIcone /> {this.state.singleRO.location}
+                    </div>
+
+                    <p className="viewone-infos-details">
                       {this.state.singleRO.date}/{this.state.singleRO.month} @
                       {this.state.singleRO.hour}:{this.state.singleRO.minute}
                       {this.state.singleRO.meridiem}
@@ -89,13 +97,39 @@ export default class ViewOne extends Component {
                   </div>
                 </>
               ) : loginStatus ? (
-                <div>
+                <>
+                  <div className="view-one-user-infos">
+                    <img
+                      className="viewone-user-image"
+                      src={user.avatar}
+                      alt="your cool pic"
+                    />
+                    <h2>{user.firstname}</h2>
+                    <h2>{user.lastname}</h2>
+                  </div>
+                  <div className="viewone-infos-container">
+                    <h1 className="viewone-infos-details-title">
+                      {this.state.singleRO.name}
+                    </h1>
+                    <p className="viewone-infos-details">
+                      {this.state.singleRO.description}
+                    </p>
+                    <div className="viewone-infos-details infos-details-location">
+                      <LocationIcone /> {this.state.singleRO.location}
+                    </div>
+
+                    <p className="viewone-infos-details">
+                      {this.state.singleRO.date}/{this.state.singleRO.month} @
+                      {this.state.singleRO.hour}:{this.state.singleRO.minute}
+                      {this.state.singleRO.meridiem}
+                    </p>
+                  </div>
                   <AcceptButton
                     history={this.props.history}
                     id={this.props.match.params.cards_id}
                     currentUser={user.id}
                   />
-                </div>
+                </>
               ) : (
                 <div>
                   <h1>Sorry, you need to be connected</h1>
