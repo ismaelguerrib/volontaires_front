@@ -11,7 +11,7 @@ export default function AcceptButton({ id, history, currentUser }) {
     if (history.location.pathname[17] === "b") {
       console.log(id);
       handler
-        .update("/api/offers/accept/" + id, { userAccepting: currentUser })
+        .update("/api/offers/accept/" + id, { acceptingUser: currentUser })
         .then(apiRes => {
           console.log(apiRes.data);
           history.push("/");
@@ -19,7 +19,7 @@ export default function AcceptButton({ id, history, currentUser }) {
         .catch(apiErr => console.error(apiErr));
     } else
       handler
-        .update("/api/requests/accept/" + id, { userAccepting: currentUser })
+        .update("/api/requests/accept/" + id, { acceptingUser: currentUser })
         .then(apiRes => {
           console.log(apiRes.data);
           history.push("/");
