@@ -60,6 +60,7 @@ export default class APIHandler extends HTTPRequestChecker {
   }
 
   update(route, payload) {
+    console.log(payload);
     super.checkRoute(route);
     if (!payload || typeof payload !== "object")
       throw new Error(
