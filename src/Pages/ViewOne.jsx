@@ -4,7 +4,7 @@ import DeleteButton from "./../Component/DeleteButton";
 import UpdateButton from "../Component/UpdateButton";
 import { AuthConsumer } from "./../auth/Guard";
 import AcceptButton from "./../Component/AcceptButton";
-import Chatroom from "../Chatroom";
+
 // import UpdateButton from "";
 const handler = new apiHandler(process.env.REACT_APP_BACK_URL);
 
@@ -48,7 +48,7 @@ export default class ViewOne extends Component {
 
   render() {
     return (
-      <div>
+      <div className="view-one-container">
         <AuthConsumer>
           {({ loginStatus, user }) => {
             return loginStatus && user.id === this.state.singleRO.userId ? (
