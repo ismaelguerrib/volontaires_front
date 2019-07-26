@@ -31,18 +31,31 @@
     transform: rotate(360deg);
   }
 }
+.chat-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+}
 .chatroom {
   width: 360px;
-  height: 600px;
-  background-color: rgba(0, 0, 0, 0.7);
+
+  background-color: white;
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+  display: none;
+  justify-content: center;
+}
+
+.chatroom.isactive {
+  display: block;
 }
 
 .chatroom h3 {
   font-family: "Pacifico", cursive;
-  background-color: rgba(30, 228, 148, 0.7);
+  background-color: #fd5c63;
   color: #fff;
   margin: 0;
   height: 40px;
@@ -58,6 +71,7 @@
   margin: 10px 0 0;
   height: 510px;
   overflow-y: scroll;
+  background: white;
 }
 
 .chatroom .chats .chat {
@@ -95,17 +109,18 @@
 .chatroom .input {
   height: 40px;
   width: 100%;
-  background: rgba(30, 228, 148, 0.7);
+  background: #fd5c63;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
 .chatroom .input input[type="text"] {
-  background: rgba(255, 255, 255, 0.5);
+  background: #fd5c63;
   outline: 0;
-  border: 2px solid #1ee494;
+  border: 2px solid white;
   padding: 0 5px;
+  color: white;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   margin-left: 10px;
@@ -117,7 +132,7 @@
 
 .chatroom .input input[type="submit"] {
   background: transparent;
-  border: 1px solid #1ee494;
+  border: 1px solid white;
   height: 30px;
   width: 70px;
   font-size: 14px;
@@ -126,9 +141,23 @@
   border-bottom-right-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
+  color: white;
 }
 
 .chatroom .input input[type="submit"]:hover {
-  background: #1ee494;
+  background: white;
   color: #fff;
+}
+
+.displayChat {
+  height: 40px;
+  width: 100px;
+  border-radius: 20px;
+  background-color: #fd5c63;
+  color: white;
+}
+
+.buttonCenter {
+  display: flex;
+  justify-content: center;
 }

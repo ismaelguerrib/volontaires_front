@@ -81,17 +81,20 @@ class Chatroom extends React.Component {
     console.log("LOOKING FOR CHATS", this.state.chats);
 
     return (
-      <div className="chatroom">
-        <h3>Chatroom</h3>
-        <ul className="chats" ref="chats">
-          {this.state.chats.map(chat => (
-            <Message chat={chat} user={username} />
-          ))}
-        </ul>
-        <form className="input" onSubmit={e => this.submitMessage(e)}>
-          <input type="text" ref="msg" />
-          <input type="submit" value="Submit" />
-        </form>
+      <div className="chat-container">
+        <div className={`chatroom ${this.props.show ? "isactive" : ""}`}>
+          <h3>Chatroom</h3>
+          <button onClick={this.props.close}>Close Chat </button>
+          <ul className="chats" ref="chats">
+            {this.state.chats.map(chat => (
+              <Message chat={chat} user={username} />
+            ))}
+          </ul>
+          <form className="input" onSubmit={e => this.submitMessage(e)}>
+            <input type="text" ref="msg" />
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
       </div>
     );
   }
