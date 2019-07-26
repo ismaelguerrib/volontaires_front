@@ -10,7 +10,7 @@ export default class DisplayUser extends Component {
     console.log(this.props);
     //   this.setState({ user: this.props.user })
     handler
-      .get("/api/users/" + this.props)
+      .get("/api/users/" + this.props.user)
       .then(res => {
         this.setState({ user: res.data });
         console.log(res.data);
