@@ -33,16 +33,22 @@ export default class AcceptingUser extends Component {
   acceptThisUser(oneUser) {
     if (this.props.types === "request") {
       handler
-        .update("/api/requests/isaccepted/" + this.props.request._id, true)
+        .update("/api/requests/isaccepted/" + this.props.request._id, {
+          isAccepted: true
+        })
         .then(res => {
-          this.deleteOtherUsers(oneUser);
+          console.log(res);
+
+          // this.deleteOtherUsers(oneUser);
         })
         .catch(apiErr => console.error(apiErr.response));
     } else {
       handler
-        .update("/api/offers/isaccepted/" + this.props.request._id, true)
+        .update("/api/offers/isaccepted/" + this.props.request._id, {
+          isAccepted: true
+        })
         .then(res => {
-          // console.log(res);
+          console.log(res);
           this.deleteOtherUsers(oneUser);
         })
         .catch(apiErr => console.error(apiErr.response));
