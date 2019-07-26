@@ -73,5 +73,16 @@
   margin: 0.45rem;
 }
 
-.one-tasks-container {
+.btn-submit-dashboard {
+  cursor: pointer;
+  border: 1px solid #fd5c63;
+  background: white;
+  color: #fd5c63;
+  padding: 0.5rem 1rem;
+  border-radius: 9rem;
+  font-size: 1rem;
+  transition: all 0.2s ease-in;
+  transition-property: color, border;
+  margin: 1rem;
+  width: 45%;
 }

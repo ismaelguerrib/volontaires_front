@@ -19,10 +19,10 @@ export default function DashboardAdmin({ user }) {
           <Offer user={user} />
         </div>
       </div>
-      <div className="accept-tasks-big-container">
+      {/* <div className="accept-tasks-big-container">
         <h2 className="dashboard-title"> Notifications :</h2>
         <AcceptedTasks user={user} />
-      </div>
+      </div> */}
       <div className="accepted-tasks-big-container">
         <h2 className="dashboard-title"> Your next Volunteers missions :</h2>
         <WhatyouSaidYesTo user={user} />

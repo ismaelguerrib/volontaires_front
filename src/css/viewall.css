@@ -25,6 +25,7 @@
   display: flex;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
+  align-items: baseline;
 }
 .card-details-title {
   font-weight: 300;

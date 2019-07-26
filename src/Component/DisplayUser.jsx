@@ -20,10 +20,14 @@ export default class DisplayUser extends Component {
   render() {
     return (
       <div>
+        <img
+          className="viewone-user-image "
+          src={this.state.user.avatar}
+          alt=""
+        />
         <h5>{this.state.user.firstname}</h5>
         <h5>{this.state.user.lastname}</h5>
         <h5>{this.state.user.age}</h5>
-        <img src={this.state.user.avatar} alt="" />
       </div>
     );
   }
