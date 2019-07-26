@@ -2,12 +2,32 @@ import React, { Component } from "react";
 import Axios from "axios";
 import Header from "../Component/Header";
 import Card from "./Card";
-export default class ViewAll extends Component {
-  state = {
-    cards: []
-  };
+import { withRouter } from "react-router-dom";
 
-  componentDidMount = () => {
+
+export default class ViewAll extends Component {
+
+
+  constructor(history) {
+    super(history);
+    this.state = {
+      cards: []
+    };
+    console.log("meh", this.props)
+    this.listenRouteChanges();
+  }
+
+
+  listenRouteChanges() {
+    this.props.history.listen((location, action) => {
+      // location is an object like window.location
+      console.log(action, location.pathname, location.state);
+      this.getData();
+    });
+
+  }
+
+  getData() {
     if (this.props.match.path === "/i-want-to-be-helped") {
       console.log("yooo");
 
@@ -34,6 +54,10 @@ export default class ViewAll extends Component {
           console.log(err);
         });
     }
+  }
+
+  componentDidMount = () => {
+    this.getData()
   };
 
   render() {
