@@ -38,11 +38,11 @@ export default class Dashboard extends Component {
                         Display Chat
                       </button>
                     </div>
-                    {/* <Chatroom
+                    <Chatroom
                       user={user}
                       show={this.state.chatDisplay}
                       close={this.closeChat}
-                    /> */}
+                    />
                   </div>
                 </>
               ) : (
