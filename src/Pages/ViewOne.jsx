@@ -12,7 +12,8 @@ const handler = new apiHandler(process.env.REACT_APP_BACK_URL);
 
 export default class ViewOne extends Component {
   state = {
-    singleRO: []
+    singleRO: [],
+    postingUser: {}
   };
 
   componentDidMount = () => {
@@ -26,26 +27,29 @@ export default class ViewOne extends Component {
       handler
         .get(`/api/offers/${this.props.match.params.cards_id}`)
         .then(apiRes => {
-          console.log(apiRes.data);
           this.setState({ singleRO: apiRes.data });
+          console.log(this.state.singleRO);
+          handler.get("api/users/" + this.state.singleRO.userId).then(res => {
+            this.setState({ postingUser: res.data })
+          }).catch(err => console.log(err))
         })
         .catch(apiErr => console.error(apiErr.response.data));
     } else {
       handler
         .get(`/api/requests/${this.props.match.params.cards_id}`)
         .then(apiRes => {
-          console.log(apiRes.data);
           this.setState({ singleRO: apiRes.data });
+          console.log(this.state.singleRO.userId);
+          handler.get("api/users/" + this.state.singleRO.userId).then(res => {
+            this.setState({ postingUser: res.data })
+          }).catch(err => console.log(err))
         })
         .catch(apiErr => console.error(apiErr.response.data));
     }
-    // apiHandler
-    //   .get(`${process.env.REACT_APP_BACK_URL}/api/offers/${this.props.match.params.cards_id}`)
-    //   .then(apiRes => {
-    //     console.log(apiRes.data);
-    //     this.setState({ beer: apiRes.data });
-    //   })
-    //   .catch(apiErr => console.error(apiErr));
+
+
+
+
   };
 
   render() {
@@ -58,83 +62,83 @@ export default class ViewOne extends Component {
               return loginStatus &&
                 user &&
                 user.id === this.state.singleRO.userId ? (
-                <>
-                  <div className="view-one-user-infos">
-                    <img
-                      className="viewone-user-image"
-                      src={user.avatar}
-                      alt="your cool pic"
-                    />
-                    <h2>{user.firstname}</h2>
-                    <h2>{user.lastname}</h2>
-                  </div>
-                  <div className="viewone-infos-container">
-                    <h1 className="viewone-infos-details-title">
-                      {this.state.singleRO.name}
-                    </h1>
-                    <p className="viewone-infos-details">
-                      {this.state.singleRO.description}
-                    </p>
-                    <div className="viewone-infos-details infos-details-location">
-                      <LocationIcone /> {this.state.singleRO.location}
+                  <>
+                    <div className="view-one-user-infos">
+                      <img
+                        className="viewone-user-image"
+                        src={user.avatar}
+                        alt="your cool pic"
+                      />
+                      <h2>{user.firstname}</h2>
+                      <h2>{user.lastname}</h2>
                     </div>
+                    <div className="viewone-infos-container">
+                      <h1 className="viewone-infos-details-title">
+                        {this.state.singleRO.name}
+                      </h1>
+                      <p className="viewone-infos-details">
+                        {this.state.singleRO.description}
+                      </p>
+                      <div className="viewone-infos-details infos-details-location">
+                        <LocationIcone /> {this.state.singleRO.location}
+                      </div>
 
-                    <p className="viewone-infos-details">
-                      {this.state.singleRO.date}/{this.state.singleRO.month} @
+                      <p className="viewone-infos-details">
+                        {this.state.singleRO.date}/{this.state.singleRO.month} @
                       {this.state.singleRO.hour}:{this.state.singleRO.minute}
-                      {this.state.singleRO.meridiem}
-                    </p>
-                  </div>
-                  <div className="viewone-btn-container">
-                    <DeleteButton
+                        {this.state.singleRO.meridiem}
+                      </p>
+                    </div>
+                    <div className="viewone-btn-container">
+                      <DeleteButton
+                        history={this.props.history}
+                        id={this.props.match.params.cards_id}
+                      />
+                      <UpdateButton
+                        history={this.props.history}
+                        id={this.props.match.params.cards_id}
+                      />
+                    </div>
+                  </>
+                ) : loginStatus ? (
+                  <>
+                    <div className="view-one-user-infos">
+                      <img
+                        className="viewone-user-image"
+                        src={this.state.postingUser.avatar}
+                        alt="your cool pic"
+                      />
+                      <h2>{this.state.postingUser.firstname}</h2>
+                      <h2>{this.state.postingUser.lastname}</h2>
+                    </div>
+                    <div className="viewone-infos-container">
+                      <h1 className="viewone-infos-details-title">
+                        {this.state.singleRO.name}
+                      </h1>
+                      <p className="viewone-infos-details">
+                        {this.state.singleRO.description}
+                      </p>
+                      <div className="viewone-infos-details infos-details-location">
+                        <LocationIcone /> {this.state.singleRO.location}
+                      </div>
+
+                      <p className="viewone-infos-details">
+                        {this.state.singleRO.date}/{this.state.singleRO.month} @
+                      {this.state.singleRO.hour}:{this.state.singleRO.minute}
+                        {this.state.singleRO.meridiem}
+                      </p>
+                    </div>
+                    <AcceptButton
                       history={this.props.history}
                       id={this.props.match.params.cards_id}
+                      currentUser={user.id}
                     />
-                    <UpdateButton
-                      history={this.props.history}
-                      id={this.props.match.params.cards_id}
-                    />
-                  </div>
-                </>
-              ) : loginStatus ? (
-                <>
-                  <div className="view-one-user-infos">
-                    <img
-                      className="viewone-user-image"
-                      src={user.avatar}
-                      alt="your cool pic"
-                    />
-                    <h2>{user.firstname}</h2>
-                    <h2>{user.lastname}</h2>
-                  </div>
-                  <div className="viewone-infos-container">
-                    <h1 className="viewone-infos-details-title">
-                      {this.state.singleRO.name}
-                    </h1>
-                    <p className="viewone-infos-details">
-                      {this.state.singleRO.description}
-                    </p>
-                    <div className="viewone-infos-details infos-details-location">
-                      <LocationIcone /> {this.state.singleRO.location}
+                  </>
+                ) : (
+                    <div>
+                      <h1>Sorry, you need to be connected</h1>
                     </div>
-
-                    <p className="viewone-infos-details">
-                      {this.state.singleRO.date}/{this.state.singleRO.month} @
-                      {this.state.singleRO.hour}:{this.state.singleRO.minute}
-                      {this.state.singleRO.meridiem}
-                    </p>
-                  </div>
-                  <AcceptButton
-                    history={this.props.history}
-                    id={this.props.match.params.cards_id}
-                    currentUser={user.id}
-                  />
-                </>
-              ) : (
-                <div>
-                  <h1>Sorry, you need to be connected</h1>
-                </div>
-              );
+                  );
             }}
           </AuthConsumer>
         </div>
