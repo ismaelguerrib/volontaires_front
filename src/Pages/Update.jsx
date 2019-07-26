@@ -192,7 +192,7 @@ export default class Update extends Component {
             onChange={this.handleChange}
             onSubmit={this.handleSubmit}
           >
-            <h1 className="form-title"> Update youre cards</h1>
+            <h1 className="form-title"> Update your cards</h1>
             <label className="form-labels" htmlFor="name"> Title : </label>
             <input className="form-inputs" type="string" name="name" id="name" defaultValue={name} />
             <label className="form-labels" htmlFor="description"> Description :</label>
