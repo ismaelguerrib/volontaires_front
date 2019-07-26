@@ -10,8 +10,7 @@
   flex-direction: column;
   margin: 1rem;
   width: 35%;
-  color: white;
-  background-color: #fd5c63;
+  color: #fd5c63;
   padding: 1rem;
   border-radius: 3px;
   align-items: center;
@@ -37,4 +36,52 @@
 
 .viewone-btn-container {
   align-items: baseline;
+  display: flex;
+  justify-content: center;
+}
+.viewone-infos-details {
+  margin: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.viewone-infos-details-title {
+  font-weight: 300;
+}
+.infos-details-location {
+  display: flex;
+  align-items: baseline;
+}
+
+@media only screen and (max-width: 600px) {
+  .view-one-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .viewone-infos-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    color: white;
+    background-color: #fd5c63;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 90%;
+  }
+  .view-one-user-infos {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    width: 65%;
+    color: white;
+    background-color: #fd5c63;
+    padding: 1rem;
+    border-radius: 3px;
+    align-items: center;
+  }
+  .viewone-infos-details {
+    margin: 0.5rem;
+    font-size: 1.2rem;
+  }
 }
