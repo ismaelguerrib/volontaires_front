@@ -184,32 +184,35 @@ export default class Update extends Component {
   render() {
     const { name, description, location, showPickyDateTime } = this.state;
     return (
-      <div className="big-container-form">
-        <h1> Update youre cards</h1>
-        <div className="form-container">
+      <div className="signup-form-container form-container">
+        <div className="">
           <form
+            className="form"
             id="form"
             onChange={this.handleChange}
             onSubmit={this.handleSubmit}
           >
-            <label htmlFor="name"> Title : </label>
-            <input type="string" name="name" id="name" defaultValue={name} />
-            <label htmlFor="description"> Description :</label>
+            <h1 className="form-title"> Update youre cards</h1>
+            <label className="form-labels" htmlFor="name"> Title : </label>
+            <input className="form-inputs" type="string" name="name" id="name" defaultValue={name} />
+            <label className="form-labels" htmlFor="description"> Description :</label>
             <input
+              className="form-inputs"
               type="string"
               name="description"
               id="description"
               defaultValue={description}
             />
-            <label htmlFor="location">Location: </label>
+            <label className="form-labels" htmlFor="location">Location: </label>
             <input
+              className="form-inputs"
               type="string"
               name="location"
               id="location"
               defaultValue={location}
             />
-            <label htmlFor="tags">Catégorie :</label>
-            <select name="tags" form="create-one">
+            <label className="form-labels" htmlFor="tags">Catégorie :</label>
+            <select className="form-inputs" name="tags" form="create-one">
               <option>Choose youre category:</option>
               <option value="Take a walk">Take a walk</option>
               <option value="DIY">DIY</option>
@@ -235,7 +238,7 @@ export default class Update extends Component {
               onResetTime={res => this.onResetTime(res)}
               onClearTime={res => this.onClearTime(res)}
             />
-            <button> Submit </button>
+            <button className="btn-submit"> Submit </button>
           </form>
         </div>
       </div>
