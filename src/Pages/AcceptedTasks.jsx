@@ -29,6 +29,8 @@ export default class AcceptedTasks extends Component {
     handler
       .get("api/requests/requestinguser/" + this.props.user.id)
       .then(res => {
+        console.log(res.data);
+
         // console.log(this.props.user.id);
         // console.log(res.data);
         res.data.forEach(element => {
