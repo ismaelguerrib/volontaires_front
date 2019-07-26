@@ -39,6 +39,7 @@ export default class OneCard extends Component {
         </div>
         {/* <p className="card-details">{this.state.card.time}</p> */}
         <p className="card-details card-details-tag">{this.state.card.tags}</p>
+        <p className="card-details card-details-tag">{this.state.card.date}/{this.state.card.month} @ {this.state.card.hour}:{this.state.card.minute} {this.state.card.meridiem}</p>
       </div>
     );
   }
