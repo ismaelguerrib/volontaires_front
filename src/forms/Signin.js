@@ -33,7 +33,7 @@ export default class Signin extends Component {
     return (
       <AuthConsumer>
         {({ signin }) => (
-          <div className="form-container">
+          <div className="signup-form-container">
             <form
               className="form"
               onSubmit={evt => handleSubmit(evt, signin)}
