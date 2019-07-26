@@ -48,15 +48,23 @@ export default class ViewOne extends Component {
 
   render() {
     return (
-      <AuthConsumer>
-        {({ loginStatus, user }) => {
-          return loginStatus === true &&
-            user.id === this.state.singleRO.userId ? (
+      <div>
+        <AuthConsumer>
+          {({ loginStatus, user }) => {
+            return loginStatus && user.id === this.state.singleRO.userId ? (
               <div>
                 <h1>{this.state.singleRO.name}</h1>
-                <h2>{this.state.singleRO.userId}</h2>
-                <h2>{user.id}</h2>
-                <p> {this.state.singleRO.description}</p>
+                <h2>{user.firstname}</h2>
+                <h2>{user.lastname}</h2>
+                <div className="viewone-infos-container">
+                  <p> {this.state.singleRO.description}</p>
+                  <p> {this.state.singleRO.location}</p>
+                  <p>
+                    {this.state.singleRO.date}/{this.state.singleRO.month} @
+                    {this.state.singleRO.hour}:{this.state.singleRO.minute}
+                    {this.state.singleRO.meridiem}
+                  </p>
+                </div>
                 <DeleteButton
                   history={this.props.history}
                   id={this.props.match.params.cards_id}
@@ -66,23 +74,22 @@ export default class ViewOne extends Component {
                   id={this.props.match.params.cards_id}
                 />
               </div>
-            ) : loginStatus === true ? (
+            ) : loginStatus ? (
               <div>
-                <h2>jo</h2>
                 <AcceptButton
                   history={this.props.history}
                   id={this.props.match.params.cards_id}
                   currentUser={user.id}
                 />
-                <Chatroom user={user}></Chatroom>
               </div>
             ) : (
-                <div>
-                  <h1>hello</h1>
-                </div>
-              );
-        }}
-      </AuthConsumer>
+              <div>
+                <h1>Sorry, you need to be connected</h1>
+              </div>
+            );
+          }}
+        </AuthConsumer>
+      </div>
     );
   }
 }
