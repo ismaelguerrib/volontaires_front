@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import apiHandler from "./../ApiHandler/Handler";
+import { Link } from "react-router-dom"
 const handler = new apiHandler(process.env.REACT_APP_BACK_URL);
 
 export default class AcceptedTasks extends Component {
@@ -48,6 +49,7 @@ export default class AcceptedTasks extends Component {
       return (
         <div className="accepted-tasks-container">
           <p className="accepted-tasks-details">{oneTask.name}</p>
+          <p className="accepted-tasks-details">{oneTask.date}/{oneTask.month}</p>
           <p className="accepted-tasks-details">
             You were accepted for this task
           </p>
