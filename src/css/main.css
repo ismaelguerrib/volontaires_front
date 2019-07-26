@@ -9,6 +9,7 @@
 @import "./forms.css";
 @import "./viewall.css";
 @import "./dashboard.css";
+@import "./viewone.css";
 
 /* RESET CSS */
 * {

@@ -53,9 +53,16 @@ export default class ViewOne extends Component {
           {({ loginStatus, user }) => {
             return loginStatus && user.id === this.state.singleRO.userId ? (
               <div>
-                <h1>{this.state.singleRO.name}</h1>
-                <h2>{user.firstname}</h2>
-                <h2>{user.lastname}</h2>
+                <div className="view-one-user-infos">
+                  <h1>{this.state.singleRO.name}</h1>
+                  <img
+                    className="viewone-user-image"
+                    src={user.avatar}
+                    alt="your cool pic"
+                  />
+                  <h2>{user.firstname}</h2>
+                  <h2>{user.lastname}</h2>
+                </div>
                 <div className="viewone-infos-container">
                   <p> {this.state.singleRO.description}</p>
                   <p> {this.state.singleRO.location}</p>

@@ -1,0 +1,23 @@
+.view-one-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.view-one-user-infos {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: 35%;
+  color: white;
+  background-color: #fd5c63;
+  padding: 1rem;
+  border-radius: 3px;
+}
+
+.viewone-user-image {
+  border-radius: 50%;
+  width: 65%;
+  justify-content: center;
+  margin: auto;
+}
