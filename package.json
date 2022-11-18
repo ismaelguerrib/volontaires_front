@@ -22,7 +22,7 @@
     "react-on-visible": "^1.6.0",
     "react-picky-date-time": "^1.3.2",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
